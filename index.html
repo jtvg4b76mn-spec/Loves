@@ -4,22 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Love Personality Test</title>
-<meta name="description" content="Love Personality Test – ค้นหารูปแบบความรักของคุณผ่าน 18 คำถาม และทำความรู้จักวิธีที่คุณเชื่อมโยง แสดงความรู้สึก และรักษาความสัมพันธ์">
-<meta property="og:title" content="Love Personality Test">
-<meta property="og:description" content="Find Your Love Style, Understand How You Connect">
+<meta name="description" content="Love Personality Test – ค้นหารูปแบบความรักของคุณ และทำความรู้จักวิธีที่คุณเชื่อมโยง แสดงความรู้สึก และรักษาความสัมพันธ์">
+<meta property="og:title" content="Love Personality Test – ค้นหารูปแบบความรักของคุณ">
+<meta property="og:description" content="ทำแบบทดสอบแล้วดูว่าคุณเป็นนักรักแบบไหน · Find Your Love Style, Understand How You Connect">
+<meta property="og:locale" content="th_TH">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jtvg4b76mn-spec.github.io/Loves/">
-<meta property="og:image" content="https://jtvg4b76mn-spec.github.io/Loves/love-personality-preview.png?v=4">
-<meta property="og:image:secure_url" content="https://jtvg4b76mn-spec.github.io/Loves/love-personality-preview.png?v=4">
+<meta property="og:image" content="https://jtvg4b76mn-spec.github.io/Loves/love-personality-preview.png?v=5">
+<meta property="og:image:secure_url" content="https://jtvg4b76mn-spec.github.io/Loves/love-personality-preview.png?v=5">
 <meta property="og:site_name" content="Love Personality Test">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Love Personality Test – Find Your Love Style, Understand How You Connect">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://jtvg4b76mn-spec.github.io/Loves/love-personality-preview.png?v=4">
+<meta name="twitter:image" content="https://jtvg4b76mn-spec.github.io/Loves/love-personality-preview.png?v=5">
 <meta name="twitter:title" content="Love Personality Test">
-<meta name="twitter:description" content="Find Your Love Style, Understand How You Connect">
+<meta name="twitter:description" content="ทำแบบทดสอบแล้วดูว่าคุณเป็นนักรักแบบไหน · Find Your Love Style, Understand How You Connect">
 <meta name="theme-color" content="#FBF5EC">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -117,6 +118,13 @@ header.top .brand{min-width:0;line-height:1.25;font-weight:700;font-size:16px;le
 .dot[aria-checked="true"]{background:var(--c)}
 .dot[aria-checked="true"] svg{opacity:1;transform:none}
 @media (min-width:640px){.dot.xl{width:62px;height:62px}.dot.l{width:50px;height:50px}.dot.m{width:38px;height:38px}.cell{height:74px}.ll{font-size:15px}}
+.choices{display:grid;gap:12px;margin-top:26px}
+.choice{display:flex;gap:14px;align-items:center;text-align:left;width:100%;appearance:none;cursor:pointer;font:inherit;color:var(--text);background:var(--surface);border:2px solid var(--line);border-radius:18px;padding:16px 18px;min-height:68px;line-height:1.55;transition:border-color .15s,background .15s,transform .12s}
+.choice:hover{border-color:var(--primary)}
+.choice:active{transform:scale(.99)}
+.choice .cn{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--tint);font-weight:700}
+.choice[aria-checked="true"]{border-color:var(--primary);background:var(--tint-2)}
+.choice[aria-checked="true"] .cn{background:var(--primary);color:var(--on-primary)}
 .nav{display:flex;gap:12px;margin-top:18px}
 .nav .btn-primary{flex:1}
 .enter{animation:slideIn .38s ease both}
@@ -157,6 +165,7 @@ header.top .brand{min-width:0;line-height:1.25;font-weight:700;font-size:16px;le
 .result-hero{text-align:center;padding:34px 18px 28px;background:var(--tint-2)}
 .letters{display:flex;justify-content:center;gap:8px}
 .letters span{display:grid;place-items:center;width:clamp(58px,17vw,84px);height:clamp(72px,21vw,104px);border-radius:18px;background:var(--a);color:#fff;font-size:clamp(38px,12vw,58px);font-weight:800;line-height:1}
+.letters span.amb{font-size:clamp(22px,6.5vw,32px)}
 .letters span:nth-child(even){background:var(--surface);color:var(--text);border:2px solid var(--a)}
 .type-en{font-size:clamp(24px,6.5vw,32px);font-weight:800;margin-top:20px}
 .type-th{color:var(--purple);font-weight:600;font-size:18px}
@@ -208,6 +217,33 @@ header.top .brand{min-width:0;line-height:1.25;font-weight:700;font-size:16px;le
   .info-grid{grid-template-columns:1fr 1fr}
   .info-grid .full{grid-column:1/-1}
 }
+/* share + shared landing */
+.btn small{display:block;font-weight:500;font-size:13px;opacity:.9;line-height:1.3}
+.cta-big{min-height:66px;font-size:19px;line-height:1.35}
+.card-preview{display:grid;place-items:center;min-height:110px;background:var(--tint-2);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:0 0 6px;color:var(--muted);font-size:15px}
+.card-preview img{max-height:36vh;width:auto;max-width:100%;display:block}
+.warn{background:var(--tint);border:1px solid var(--line);color:var(--text);border-radius:12px;padding:10px 12px;font-size:14.5px;margin:0 0 12px}
+[tabindex="-1"]:focus{outline:none}
+.compact .type-illus{width:min(190px,54%);margin-bottom:14px}
+.compact .letters span{width:clamp(50px,14vw,64px);height:clamp(62px,17vw,80px);font-size:clamp(32px,9vw,44px)}
+.compact .type-en{margin-top:14px;font-size:clamp(22px,6vw,28px)}
+.compact .type-desc{font-size:15px;margin-top:8px}
+.shared-note{margin:14px 0 0;text-align:center;color:var(--muted);font-size:14.5px}
+/* story sheet */
+.sheet-wrap{position:fixed;inset:0;z-index:30;background:rgba(30,15,25,.5);display:flex;align-items:flex-end;justify-content:center;animation:fadeIn .2s ease both}
+.sheet{width:100%;max-width:560px;background:var(--surface);border-radius:26px 26px 0 0;padding:22px 20px calc(22px + env(safe-area-inset-bottom,0px));max-height:92vh;overflow:auto;box-shadow:0 -10px 40px rgba(0,0,0,.25);animation:sheetUp .3s ease both}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes sheetUp{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+.sheet h2{font-size:20px;margin-bottom:6px}
+.sheet .sub{color:var(--muted);font-size:15px;margin-bottom:14px}
+.steps{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:10px;counter-reset:st}
+.steps li{counter-increment:st;display:flex;gap:12px;align-items:flex-start;background:var(--tint-2);border:1px solid var(--line);border-radius:16px;padding:12px 14px;font-size:15.5px;line-height:1.6}
+.steps li::before{content:counter(st);flex:none;width:28px;height:28px;border-radius:50%;background:var(--primary);color:var(--on-primary);display:grid;place-items:center;font-weight:700;font-size:14px;margin-top:1px}
+.steps b{font-weight:700}
+.linkbox{word-break:break-all;font-size:14px;color:var(--muted);background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:8px 10px;margin-top:6px}
+.sheet .row{display:grid;gap:10px}
+.ok{color:var(--green);font-weight:700}
+@media print{.sheet-wrap{display:none!important}}
 @media print{
   @page{margin:14mm}
   body{background:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -261,17 +297,38 @@ const QUESTIONS=[
  "ถ้าความสัมพันธ์เริ่มมีปัญหา ฉันมักรู้สึกว่าไม่จำเป็นต้องพยายามรักษามัน"
 ];
 const REVERSE=new Set([2,4,6,8,10,12,14,16,18]); // 1-based question numbers
-const LIKERT=["ไม่ตรงกับฉันเลย","ค่อนข้างไม่ตรงกับฉัน","ปานกลาง","ค่อนข้างตรงกับฉัน","ตรงกับฉันมากที่สุด"];
+const LIKERT=["ไม่เห็นด้วยอย่างยิ่ง","ไม่เห็นด้วย","ไม่แน่ใจ","เห็นด้วย","เห็นด้วยอย่างยิ่ง"];
 
 const DIMS=[
  {key:"conn",axis:"C",name:"Connection",full:"Relational Connection",from:0,hi:"C",lo:"B"},
  {key:"drive",axis:"E",name:"Emotional Drive",full:"Emotional Drive",from:6,hi:"E",lo:"R"},
  {key:"commit",axis:"S",name:"Commitment",full:"Relational Commitment",from:12,hi:"S",lo:"F"}
 ];
-const TIEBREAK={
- C:"โดยทั่วไป ฉันรู้สึกสบายใจกับการเปิดใจและรับฟังเรื่องส่วนตัวของคนใกล้ตัว",
- E:"เวลาฉันรู้สึกตื่นเต้นหรือสนใจอะไร คนรอบตัวมักสังเกตได้",
- S:"เมื่อความสัมพันธ์สำคัญกับฉัน ฉันมักพยายามแก้ปัญหาเพื่อรักษาความสัมพันธ์นั้นไว้"
+/* คำถามชี้ขาด — ใช้เมื่อคะแนนแกนนั้นอยู่ใน Border Zone 16–20
+   ต่อแกน 4 ข้อ (ข้อสนับสนุนตัวอักษรแรก 2 ข้อ สลับกับตัวอักษรหลัง 2 ข้อ) และ A/B 1 ข้อ ใช้เฉพาะเมื่อ 4 ข้อแรกเท่ากัน */
+const BORDER_LOW=16,BORDER_HIGH=20;
+const TB_ITEMS={
+ C:[ /* CB1–CB4 */
+  {s:"hi",t:"เวลามีเรื่องสำคัญเกิดขึ้น ฉันมักอยากเล่าให้คนที่ไว้ใจฟัง"},
+  {s:"lo",t:"ถึงจะสนิทกับใคร ฉันก็ไม่ค่อยเล่าทุกเรื่องเกี่ยวกับตัวเองให้เขาฟัง"},
+  {s:"hi",t:"ฉันรู้สึกใกล้ชิดกับใครมากขึ้นเมื่อเราได้พูดคุยกันถึงความรู้สึกจริง ๆ"},
+  {s:"lo",t:"ฉันไม่ค่อยรู้สึกว่าความสนิทหมายถึงการต้องเปิดเผยเรื่องส่วนตัวให้กันทั้งหมด"}],
+ E:[ /* ER1–ER4 */
+  {s:"hi",t:"ถ้าฉันสนใจใคร อีกฝ่ายมักพอสังเกตได้จากท่าทีของฉัน"},
+  {s:"lo",t:"ถึงจะรู้สึกกับใครมาก ฉันก็ไม่ค่อยแสดงออกทันที"},
+  {s:"hi",t:"เวลารู้สึกดีหรือตื่นเต้น ฉันมักแสดงออกให้คนรอบตัวเห็น"},
+  {s:"lo",t:"ฉันไม่ค่อยแสดงความรู้สึกกับคนที่สนใจ จนกว่าจะรู้สึกมั่นใจมากขึ้น"}],
+ S:[ /* SF1–SF4 */
+  {s:"hi",t:"ถ้าความสัมพันธ์สำคัญกับฉัน ฉันพร้อมใช้เวลาเพื่อหาทางแก้ปัญหาที่เกิดขึ้น"},
+  {s:"lo",t:"เมื่อความสัมพันธ์ไม่เหมาะกับฉันอีกต่อไป ฉันไม่คิดว่าจำเป็นต้องฝืนรักษาไว้"},
+  {s:"hi",t:"เมื่อมีความขัดแย้ง ฉันมักอยากหาวิธีให้ความสัมพันธ์เดินต่อไปได้"},
+  {s:"lo",t:"ฉันไม่คิดว่าทุกความสัมพันธ์จำเป็นต้องรักษาไว้ หากสถานการณ์เปลี่ยนไปมาก"}]
+};
+/* Final Tie-break: ใช้เมื่อคะแนนหลักฐานของ 4 ข้อเท่ากัน ตัวเลือก mid = ก้ำกึ่ง (ไม่บังคับเลือกตัวอักษร) */
+const TB_AB={
+ C:{q:"เวลาไม่สบายใจ คุณมักรู้สึกสบายใจกับวิธีไหนมากกว่า",hi:"คุยหรือแบ่งปันความรู้สึกกับคนที่ไว้ใจ",lo:"มีเวลาอยู่กับตัวเองและจัดการความรู้สึกก่อน",mid:"ขึ้นอยู่กับสถานการณ์หรือใกล้เคียงกันทั้งสองแบบ"},
+ E:{q:"ถ้าคุณเริ่มชอบใครสักคน คุณมีแนวโน้มทำแบบไหนมากกว่า",hi:"แสดงออกให้อีกฝ่ายพอสังเกตได้ว่าฉันสนใจ",lo:"เก็บความรู้สึกไว้ก่อนจนกว่าจะมั่นใจมากขึ้น",mid:"ขึ้นอยู่กับคนหรือสถานการณ์"},
+ S:{q:"ถ้าความสัมพันธ์ที่สำคัญเริ่มมีปัญหาซ้ำ ๆ สิ่งที่คุณมักคิดถึงก่อนคืออะไร",hi:"จะมีวิธีไหนที่เรายังสามารถแก้ปัญหาและเดินต่อด้วยกันได้",lo:"ความสัมพันธ์นี้ยังเหมาะกับเราทั้งสองคนอยู่หรือไม่",mid:"ขึ้นอยู่กับปัญหาและสถานการณ์"}
 };
 const AXES={
  C:{name:"Connected",th:"ให้ความสำคัญกับความเข้าใจ ความไว้ใจ และการเชื่อมโยงทางอารมณ์"},
@@ -468,11 +525,11 @@ const store={
  del(k){try{localStorage.removeItem(k)}catch(e){}}
 };
 const SCALE=[
- {v:5,t:"ตรงกับฉันมากที่สุด",l:"ตรงกับฉัน<br>มากที่สุด",side:"agree",sz:"xl"},
- {v:4,t:"ค่อนข้างตรงกับฉัน",l:"ค่อนข้าง<br>ตรงกับฉัน",side:"agree",sz:"l"},
- {v:3,t:"ปานกลาง",l:"ปานกลาง",side:"neutral",sz:"m"},
- {v:2,t:"ค่อนข้างไม่ตรงกับฉัน",l:"ค่อนข้าง<br>ไม่ตรงกับฉัน",side:"disagree",sz:"l"},
- {v:1,t:"ไม่ตรงกับฉันเลย",l:"ไม่ตรงกับ<br>ฉันเลย",side:"disagree",sz:"xl"}
+ {v:5,t:"เห็นด้วยอย่างยิ่ง",l:"เห็นด้วย<br>อย่างยิ่ง",side:"agree",sz:"xl"},
+ {v:4,t:"เห็นด้วย",l:"เห็นด้วย",side:"agree",sz:"l"},
+ {v:3,t:"ไม่แน่ใจ",l:"ไม่แน่ใจ",side:"neutral",sz:"m"},
+ {v:2,t:"ไม่เห็นด้วย",l:"ไม่เห็นด้วย",side:"disagree",sz:"l"},
+ {v:1,t:"ไม่เห็นด้วยอย่างยิ่ง",l:"ไม่เห็นด้วย<br>อย่างยิ่ง",side:"disagree",sz:"xl"}
 ];
 const MARK=size=>`<svg class="mark" width="${size}" height="${size}" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
  <circle cx="32" cy="32" r="28" fill="none" stroke="var(--primary)" stroke-width="4"/>
@@ -490,36 +547,71 @@ let advanceTimer=null;
 const allAnswered=()=>state.answers.every(v=>v!==null);
 const scored=i=>REVERSE.has(i+1)?6-state.answers[i]:state.answers[i];
 const dimScore=d=>{let s=0;for(let i=d.from;i<d.from+6;i++)s+=scored(i);return s};
-const computeTieAxes=()=>allAnswered()?DIMS.filter(d=>dimScore(d)===18).map(d=>d.axis):[];
-function letterFor(d){
- const sc=dimScore(d);
- if(sc>=19)return d.hi;
- if(sc<=17)return d.lo;
- const t=state.tie[d.axis];
- if(t>=4)return d.hi;
- if(t<=2)return d.lo;
- // tie-break answered 3: compare positive items (1st,3rd,5th) vs reverse items (2nd,4th,6th) after scoring
- let pos=0,rev=0;
- for(let k=0;k<6;k++){const v=scored(d.from+k);if(k%2===0)pos+=v;else rev+=v}
- return pos>=rev?d.hi:d.lo;
+const inBorder=sc=>sc>=BORDER_LOW&&sc<=BORDER_HIGH;
+const computeTieAxes=()=>allAnswered()?DIMS.filter(d=>inBorder(dimScore(d))).map(d=>d.axis):[];
+function ensureTie(axis){
+ const t=state.tie[axis];
+ if(!t||!Array.isArray(t.a)||t.a.length!==4)state.tie[axis]={a:[null,null,null,null],ab:null,flip:Math.random()<.5};
+ return state.tie[axis];
 }
+const tbAnswered=axis=>{const t=state.tie[axis];return !!t&&t.a.every(v=>v!==null)};
+/* คำตอบ 4–5 = หลักฐานให้ฝั่งที่ข้อความสนับสนุน, 1–2 = ให้ฝั่งตรงข้าม, 3 = เป็นกลาง (นับแยกไว้) */
+function evidence(axis){
+ const t=state.tie[axis];let hi=0,lo=0,neutral=0;
+ if(t)TB_ITEMS[axis].forEach((it,k)=>{
+  const v=t.a[k];if(v==null)return;
+  if(v>=4){if(it.s==="hi")hi++;else lo++}
+  else if(v<=2){if(it.s==="hi")lo++;else hi++}
+  else neutral++;
+ });
+ return {hi,lo,neutral,diff:Math.abs(hi-lo)};
+}
+const clarityLabel=diff=>diff>=3?"สูง":diff===2?"ปานกลาง":diff===1?"ค่อนข้างต่ำ":"ต่ำ";
+function resolveAxis(d){
+ const sc=dimScore(d);
+ if(sc>BORDER_HIGH)return {letter:d.hi,mode:"direct",amb:false};
+ if(sc<BORDER_LOW)return {letter:d.lo,mode:"direct",amb:false};
+ const lean=sc>=18?d.hi:d.lo; // ใช้เป็นตัวแทนแสดงผลเท่านั้น เมื่อผลชี้ขาดยัง "ก้ำกึ่ง"
+ if(!tbAnswered(d.axis))return {letter:lean,mode:"direct",amb:false};
+ const ev=evidence(d.axis);
+ if(ev.hi>ev.lo)return {letter:d.hi,mode:"evidence",amb:false,ev};
+ if(ev.lo>ev.hi)return {letter:d.lo,mode:"evidence",amb:false,ev};
+ const ab=state.tie[d.axis].ab;
+ if(ab==="hi")return {letter:d.hi,mode:"final",amb:false,ev};
+ if(ab==="lo")return {letter:d.lo,mode:"final",amb:false,ev};
+ return {letter:lean,mode:"final",amb:true,ev};
+}
+const letterFor=d=>resolveAxis(d).letter;
 function getItems(){
  const items=QUESTIONS.map((q,i)=>({type:"q",i,q}));
- state.tieAxes.forEach(a=>items.push({type:"tb",axis:a}));
+ state.tieAxes.forEach(axis=>{
+  ensureTie(axis);
+  for(let k=0;k<4;k++)items.push({type:"tb",axis,k});
+  if(tbAnswered(axis)){const ev=evidence(axis);if(ev.hi===ev.lo)items.push({type:"ab",axis})}
+ });
  return items;
 }
-const isAnswered=it=>it.type==="q"?state.answers[it.i]!==null:state.tie[it.axis]!=null;
+const isAnswered=it=>{
+ if(it.type==="q")return state.answers[it.i]!==null;
+ const t=state.tie[it.axis];if(!t)return false;
+ return it.type==="tb"?t.a[it.k]!==null:t.ab!==null;
+};
 
 function loadState(){
  const a=store.get(KEY.ans,null);
  if(Array.isArray(a)&&a.length===18)state.answers=a.map(v=>Number.isInteger(v)&&v>=1&&v<=5?v:null);
- const t=store.get(KEY.tie,{});if(t&&typeof t==="object"&&!Array.isArray(t))state.tie=t;
+ const t=store.get(KEY.tie,{});state.tie={};
+ if(t&&typeof t==="object"&&!Array.isArray(t))["C","E","S"].forEach(ax=>{const x=t[ax];if(x&&Array.isArray(x.a)&&x.a.length===4)state.tie[ax]={a:x.a.map(v=>Number.isInteger(v)&&v>=1&&v<=5?v:null),ab:x.ab==="hi"||x.ab==="lo"||x.ab==="mid"?x.ab:null,flip:!!x.flip}});
  state.tieAxes=computeTieAxes();
  const c=store.get(KEY.cur,0);state.idx=Number.isInteger(c)&&c>=0?c:0;
  state.idx=Math.min(state.idx,getItems().length-1);
  const r=store.get(KEY.res,null);
  if(r&&TYPES[r.code]&&r.scores)state.result=r;
- state.screen=state.result?"result":"intro";
+ const q=new URLSearchParams(location.search);
+ if(q.has("type")){
+  const code=(q.get("type")||"").trim().toUpperCase();
+  if(TYPES[code]){state.screen="shared";state.sharedType=code}else state.screen="notfound";
+ }else state.screen=state.result?"result":"intro";
 }
 function saveState(){
  store.set(KEY.ans,state.answers);store.set(KEY.tie,state.tie);store.set(KEY.cur,state.idx);
@@ -535,7 +627,7 @@ function resetState(){
    นับจำนวนผู้เข้าชมและผู้ทำแบบทดสอบเสร็จด้วย GoatCounter (ไม่เก็บคำตอบ ไม่ใช้คุกกี้)
    ใส่ code ของ GoatCounter ที่นี่ เช่น "love-personality" (จะได้ลิงก์ love-personality.goatcounter.com)
    ปล่อยเป็น "" = ปิดการนับ */
-const TRACKING={goatcounter:"love-personality",visitPath:"/love-visit",completePath:"/love-completed"};
+const TRACKING={goatcounter:"love-personality",visitPath:"/love-visit",shareVisitPath:"/love-visit-from-share",completePath:"/love-completed"};
 const COUNTED_KEY="lpt-completion-counted-v1";
 const trackingOn=()=>!!TRACKING.goatcounter;
 function pixel(path,title){
@@ -546,7 +638,10 @@ function pixel(path,title){
   img.src="https://"+encodeURIComponent(TRACKING.goatcounter)+".goatcounter.com/count?p="+encodeURIComponent(path)+"&t="+encodeURIComponent(title)+"&rnd="+Math.random().toString(36).slice(2);
  }catch(e){}
 }
-function trackVisit(){pixel(TRACKING.visitPath,"Love Personality Test – visit")}
+function trackVisit(){
+ pixel(TRACKING.visitPath,"Love Personality Test – visit");
+ if(state.screen==="shared")pixel(TRACKING.shareVisitPath,"Love Personality Test – visit from shared result");
+}
 function trackCompletion(){
  if(!trackingOn())return;
  try{if(localStorage.getItem(COUNTED_KEY))return}catch(e){}
@@ -606,7 +701,7 @@ function renderIntro(){
   <div class="hero-logo">${MARK(84)}<h1 id="t" data-focus>${WORDMARK}<span class="sub">Personality Test</span></h1></div>
   <p class="tagline">Find Your Love Style, Understand How You Connect</p>
   <p class="th-name">แบบทดสอบบุคลิกภาพด้านความรักและความสัมพันธ์</p>
-  <p class="purpose">ค้นหารูปแบบความรักของคุณผ่าน 18 คำถาม และทำความรู้จักวิธีที่คุณเชื่อมโยง แสดงความรู้สึก และรักษาความสัมพันธ์</p>
+  <p class="purpose">ค้นหารูปแบบความรักของคุณ และทำความรู้จักวิธีที่คุณเชื่อมโยง แสดงความรู้สึก และรักษาความสัมพันธ์</p>
   <p class="note">แบบทดสอบนี้ใช้เพื่อสำรวจแนวโน้มด้านความรักและความสัมพันธ์ ไม่ใช่เครื่องมือวินิจฉัยทางจิตวิทยา ผลลัพธ์ไม่ควรใช้เพื่อตัดสินคุณค่าของบุคคลหรือความเหมาะสมของความสัมพันธ์เพียงอย่างเดียว</p>
   <div class="start stack-btns">${primaryButtons()}
    <button class="btn btn-ghost btn-block" data-action="scrollTypes">ดูบุคลิกภาพทั้ง 8 แบบ</button></div>
@@ -623,6 +718,11 @@ function likertHTML(cur,labelledBy){
  </div>`;
 }
 
+function abHTML(item,cur){
+ const ab=TB_AB[item.axis],t=state.tie[item.axis];
+ const order=t.flip?["lo","hi","mid"]:["hi","lo","mid"];
+ return `<div class="choices" role="radiogroup" aria-labelledby="qt">${order.map((k,i)=>`<button class="choice" role="radio" aria-checked="${cur===k}" data-action="answer" data-value="${k}" data-pos="${i+1}"><span class="cn">${"ABC"[i]}</span><span>${ab[k]}</span></button>`).join("")}</div>`;
+}
 function renderQuiz(anim){
  setHeader(true);
  const items=getItems();
@@ -630,13 +730,17 @@ function renderQuiz(anim){
  const item=items[state.idx],total=items.length,answered=isAnswered(item);
  const isLast=state.idx===total-1&&answered;
  const pct=Math.round(((state.idx+(answered?1:0))/total)*100);
+ const extraTotal=total-18;
  let label,body;
  if(item.type==="q"){
   label=`คำถามที่ ${state.idx+1} จาก 18`;
-  body=`<p class="q-kicker">ข้อความนี้ตรงกับคุณมากน้อยแค่ไหน?</p><h2 class="q-text" id="qt" data-focus>${item.q}</h2>${likertHTML(state.answers[item.i],"qt")}`;
+  body=`<p class="q-kicker">คุณเห็นด้วยกับข้อความนี้มากน้อยแค่ไหน?</p><h2 class="q-text" id="qt" data-focus>${item.q}</h2>${likertHTML(state.answers[item.i],"qt")}`;
+ }else if(item.type==="tb"){
+  label=`คำถามเพิ่มเติม ${state.idx-17} จาก ${extraTotal}`;
+  body=`<p class="q-kicker">คะแนนแกนหนึ่งของคุณอยู่ช่วงกลาง ตอบเพิ่มอีกไม่กี่ข้อเพื่อให้ผลแม่นขึ้น</p><h2 class="q-text" id="qt" data-focus>${TB_ITEMS[item.axis][item.k].t}</h2>${likertHTML(state.tie[item.axis].a[item.k],"qt")}`;
  }else{
-  label=`คำถามเพิ่มเติม ${state.idx-17} จาก ${state.tieAxes.length}`;
-  body=`<p class="q-kicker">คะแนนของแกนนี้เท่ากัน ตอบอีกข้อเพื่อตัดสิน</p><h2 class="q-text" id="qt" data-focus>${TIEBREAK[item.axis]}</h2>${likertHTML(state.tie[item.axis],"qt")}`;
+  label=`คำถามเพิ่มเติม ${state.idx-17} จาก ${extraTotal}`;
+  body=`<p class="q-kicker">ข้อสุดท้ายของแกนนี้ เลือกข้อที่ใกล้ตัวคุณที่สุด</p><h2 class="q-text" id="qt" data-focus>${TB_AB[item.axis].q}</h2>${abHTML(item,state.tie[item.axis].ab)}`;
  }
  app.innerHTML=`
  <section aria-label="แบบทดสอบ">
@@ -652,6 +756,30 @@ function renderQuiz(anim){
  if(anim)focusHeading();
 }
 
+/* ---- แสดงผลเมื่อมิติไหน "ก้ำกึ่ง" ---- */
+function letterLabels(r){return r.code.split("").map((l,i)=>r.amb&&r.amb[i]?DIMS[i].hi+"/"+DIMS[i].lo:l)}
+function altTypes(r){
+ const opts=r.code.split("").map((l,i)=>r.amb&&r.amb[i]?[DIMS[i].hi,DIMS[i].lo]:[l]);
+ let combos=[""];opts.forEach(o=>{combos=combos.flatMap(c=>o.map(x=>c+x))});
+ return combos.filter(c=>c!==r.code);
+}
+function axisNote(d,i,r){
+ const sc=r.scores[d.key];
+ if(!inBorder(sc))return "";
+ const ax=r.axes&&r.axes[i];
+ if(!ax||ax.hi==null)return `<div class="pair-note">คะแนนหลักอยู่ช่วงกลาง (16–20)</div>`;
+ const amb=r.amb&&r.amb[i],letter=r.code[i],diff=Math.abs(ax.hi-ax.lo);
+ const lines=[
+  `คะแนนหลัก ${sc} / 30 อยู่ใน Border Zone (16–20)`,
+  `คะแนนข้อชี้ขาด ${d.hi} = ${ax.hi} · ${d.lo} = ${ax.lo}`+(ax.neutral?` · ตอบก้ำกึ่ง ${ax.neutral} ข้อ`:"")
+ ];
+ if(amb)lines.push(`ผล: ${d.hi}/${d.lo} ก้ำกึ่ง (ไม่บังคับเลือกตัวอักษร)`);
+ else lines.push(`ผล: ${letter} ${AXES[letter].name}`);
+ if(ax.hi===ax.lo)lines.push(amb?"ความชัดเจน: ต่ำ (ข้อชี้ขาดสุดท้ายเลือกตัวเลือกก้ำกึ่ง)":"ความชัดเจน: ต่ำ (คะแนนเท่ากัน ใช้ข้อชี้ขาดสุดท้ายตัดสิน)");
+ else lines.push("ความชัดเจน: "+clarityLabel(diff));
+ if(ax.neutral>=2)lines.push("ผลของมิตินี้มีความชัดเจนต่ำ เนื่องจากมีคำตอบก้ำกึ่งหลายข้อ");
+ return `<div class="pair-note">${lines.join("<br>")}</div>`;
+}
 function renderProcessing(){
  setHeader(true);
  app.innerHTML=`<section class="card processing enter" aria-live="polite"><div class="spinner" aria-hidden="true"></div><h2 data-focus>กำลังวิเคราะห์รูปแบบความรักของคุณ…</h2><p class="lead">รอสักครู่ ผลลัพธ์กำลังจะแสดง</p></section>`;
@@ -663,27 +791,29 @@ function renderResult(){
  const r=state.result,t=TYPES[r.code],letters=r.code.split("");
  const pairs=DIMS.map((d,i)=>{
   const sc=r.scores[d.key],hi=d.hi,lo=d.lo,pole=letters[i];
-  const tied=sc===18;
+  
   return `<div class="pair">
    <div class="pair-title"><span>${d.name}</span><span>${sc} / 30</span></div>
    <div class="pair-head"><span>${hi} – ${AXES[hi].name}</span><span class="r">${AXES[lo].name} – ${lo}</span></div>
    <div class="pair-bar" role="img" aria-label="${d.full} ${sc} จาก 30 คะแนน ผลคือ ${pole}"><i data-w="${(sc/36)*100}" style="width:0"></i></div>
-   ${tied?`<div class="pair-note">คะแนนเท่ากัน จึงตัดสินด้วยคำถามเพิ่มเติม (ผลคือ ${pole})</div>`:""}
+   ${axisNote(d,i,r)}
   </div>`}).join("");
  app.innerHTML=`
  <section class="card enter" style="padding:0;overflow:hidden;--a:${t.color}" aria-labelledby="rt">
   <div class="result-hero">
    <p class="q-kicker" style="margin:0 0 14px">ผลบุคลิกภาพความรักของคุณ<br><small>YOUR LOVE TYPE</small></p>
    <div class="type-illus">${CHARS[r.code]()}</div>
-   <div class="letters" aria-hidden="true">${letters.map(l=>`<span>${l}</span>`).join("")}</div>
+   <div class="letters" aria-hidden="true">${letterLabels(r).map(l=>`<span class="${l.length>1?"amb":""}">${l}</span>`).join("")}</div>
    <h1 class="type-en" id="rt" data-focus><span class="sr-only">${r.code} </span>${t.en}</h1>
    <div class="type-th">${t.th}</div>
    <p class="type-desc">${t.def}</p>
+   ${r.amb&&r.amb.some(Boolean)?`<p class="type-desc" style="margin-top:10px"><b>ผลของคุณมีมิติที่ก้ำกึ่ง</b> ตัวละครและรหัสด้านบนเป็นตัวแทนที่ใกล้เคียงที่สุด</p>`:""}
   </div>
   <div style="padding:6px 22px 26px">
+   ${r.amb&&r.amb.some(Boolean)?`<div class="section"><div class="info"><h3>ผลที่เป็นไปได้อีกแบบ</h3><p>มิติที่ก้ำกึ่ง (${DIMS.filter((d,i)=>r.amb[i]).map(d=>d.hi+"/"+d.lo).join(", ")}) ผมไม่บังคับเลือกตัวอักษร ผลของคุณจึงอาจเป็นได้อีกแบบ:</p><ul class="chips" style="margin-top:10px">${altTypes(r).map(c=>`<li style="border-color:var(--a)">${c} · ${TYPES[c].th}</li>`).join("")}</ul></div></div>`:""}
    <div class="section">
     <h2>คะแนนของแต่ละแกน</h2>
-    <p class="mini-note">คะแนนแต่ละแกนอยู่ระหว่าง 6–30 (19–30 ได้ตัวอักษรแรก, 6–17 ได้ตัวอักษรหลัง)</p>
+    <p class="mini-note">คะแนนแต่ละแกนอยู่ระหว่าง 6–30 (21–30 ได้ตัวอักษรแรก, 6–15 ได้ตัวอักษรหลัง, 16–20 ใช้คำถามเพิ่มเติมช่วยตัดสิน)</p>
     ${pairs}
    </div>
    <div class="section info-grid">
@@ -696,11 +826,10 @@ function renderResult(){
      ${letters.map(l=>`<div class="letter"><div class="l">${l}</div><div><b>${AXES[l].name}</b><span>${AXES[l].th}</span></div></div>`).join("")}</div></div>
    </div>
    <div class="actions">
-    <button class="btn btn-primary wide" data-action="story">แชร์ลงสตอรี่ Instagram</button>
+    <button class="btn btn-primary wide" data-action="shareResult">แชร์ผลของฉัน<small>Share My Result</small></button>
+    <button class="btn btn-ghost" data-action="copyLink">คัดลอกลิงก์ผลลัพธ์</button>
+    <button class="btn btn-ghost" data-action="saveStory">บันทึกภาพสตอรี่</button>
     <button class="btn btn-ghost wide" data-action="restart">ทำแบบทดสอบอีกครั้ง</button>
-    <button class="btn btn-ghost" data-action="copy">คัดลอกผลลัพธ์</button>
-    <button class="btn btn-ghost" data-action="download">ดาวน์โหลดผลลัพธ์เป็นภาพ</button>
-    <button class="btn btn-ghost" data-action="share">แชร์ผลลัพธ์</button>
     <button class="btn btn-ghost" data-action="print">พิมพ์ / บันทึกเป็น PDF</button>
    </div>
    <p class="disclaimer">แบบทดสอบนี้ใช้เพื่อสำรวจแนวโน้มด้านความรักและความสัมพันธ์ ไม่ใช่เครื่องมือวินิจฉัยทางจิตวิทยา ผลลัพธ์ไม่ควรใช้เพื่อตัดสินคุณค่าของบุคคลหรือความเหมาะสมของความสัมพันธ์เพียงอย่างเดียว</p>
@@ -709,10 +838,47 @@ function renderResult(){
  </section>`;
  requestAnimationFrame(()=>requestAnimationFrame(()=>app.querySelectorAll(".pair-bar i").forEach(i=>i.style.width=i.dataset.w+"%")));
  focusHeading();window.scrollTo({top:0});
+ prepareCard();
+}
+
+/* ----- Shared result landing + not found ----- */
+function renderShared(){
+ setHeader(true);
+ const code=state.sharedType,t=TYPES[code];
+ document.title=t.en+" · "+SITE_NAME;
+ app.innerHTML=`
+ <section class="card enter" style="padding:0;overflow:hidden;--a:${t.color}" aria-labelledby="st">
+  <div class="result-hero compact" style="padding-top:24px;padding-bottom:20px">
+   <p class="q-kicker" style="margin:0 0 12px" id="st" data-focus>เพื่อนของคุณได้บุคลิกภาพนี้<br><small>YOUR FRIEND'S LOVE TYPE</small></p>
+   <div class="type-illus">${CHARS[code]()}</div>
+   <div class="letters" aria-hidden="true">${code.split("").map(l=>`<span>${l}</span>`).join("")}</div>
+   <h1 class="type-en"><span class="sr-only">${code} </span>${t.en}</h1>
+   <div class="type-th">${t.th}</div>
+   <p class="type-desc">${shortDesc(t)}</p>
+  </div>
+  <div style="padding:22px 22px 28px">
+   <button class="btn btn-primary btn-block cta-big" data-action="startFresh">ค้นหาบุคลิกภาพของคุณ<small>Discover Your Personality</small></button>
+   <p class="shared-note">ทำแบบทดสอบใช้เวลาประมาณ 3 นาที ไม่ต้องสมัครสมาชิกหรือล็อกอิน</p>
+   ${state.result?`<button class="btn btn-ghost btn-block" style="margin-top:14px" data-action="viewMine">ดูผลของฉัน (${state.result.code})</button>`:""}
+  </div>
+ </section>`;
+ focusHeading();window.scrollTo({top:0});
+}
+function renderNotFound(){
+ setHeader(true);
+ app.innerHTML=`
+ <section class="card enter" aria-labelledby="nf">
+  <h1 id="nf" data-focus style="font-size:26px">ไม่พบผลลัพธ์<br><small style="font-size:16px;color:var(--muted);font-weight:500">Result not found</small></h1>
+  <p class="lead">ลิงก์นี้อาจพิมพ์ไม่ครบหรือไม่ถูกต้อง ลองทำแบบทดสอบเพื่อค้นหาบุคลิกภาพความรักของคุณได้เลย</p>
+  <div class="start"><button class="btn btn-primary btn-block cta-big" data-action="startFresh">ทำแบบทดสอบ<small>Take the Test</small></button></div>
+ </section>`;
+ focusHeading();window.scrollTo({top:0});
 }
 
 function render(anim){
- if(state.screen==="intro")renderIntro();
+ if(state.screen==="shared")renderShared();
+ else if(state.screen==="notfound")renderNotFound();
+ else if(state.screen==="intro")renderIntro();
  else if(state.screen==="quiz")renderQuiz(anim);
  else renderResult();
 }
@@ -720,61 +886,59 @@ function render(anim){
 /* -------------------------------------------------------------- ACTIONS */
 function finish(){
  const scores={};DIMS.forEach(d=>scores[d.key]=dimScore(d));
- state.result={code:DIMS.map(letterFor).join(""),scores};
+ const res=DIMS.map(resolveAxis);
+ state.result={code:res.map(x=>x.letter).join(""),scores,amb:res.map(x=>x.amb),axes:res.map((x,i)=>({mode:x.mode,hi:x.ev?x.ev.hi:null,lo:x.ev?x.ev.lo:null,neutral:x.ev?x.ev.neutral:null}))};
  state.screen="result";saveState();trackCompletion();
  renderProcessing();
  setTimeout(()=>{if(state.screen==="result")renderResult()},1800);
 }
-function summaryText(){
- const r=state.result,t=TYPES[r.code];
- return `ผล Love Personality Test ของฉันคือ ${r.code} · ${t.en} (${t.th})\nConnection ${r.scores.conn}/30 · Emotional Drive ${r.scores.drive}/30 · Commitment ${r.scores.commit}/30\n${location.href.split("#")[0]}`;
+/* ---------------------------------------------------------- SHARE RESULT */
+const SITE_URL="https://jtvg4b76mn-spec.github.io/Loves/";
+const SITE_NAME="Love Personality Test";
+const resultURL=code=>SITE_URL+"?type="+code;
+const IN_APP=/Instagram|FBAN|FBAV|Line\//i.test(navigator.userAgent||"");
+/* QR Code ของ SITE_URL?type=XXX (33x33 modules, ECC ปกติ) สร้างล่วงหน้าและตรวจสอบการสแกนแล้ว
+   ถ้าเปลี่ยน SITE_URL ต้องสร้าง QR ใหม่ทั้ง 8 แบบ */
+const QR_N=33;
+const QR_HEX={"CES": "00000000000000000fec2bbf8410241042ea74eba175bcc5d0baf392e8412779043faaaafe000819000f28bfce80ee1dd442f87a92c16a1e4610a34c48606a7f891c078286ae022751f20f3b738d022c592b82cb9e028032b0ac40f6bbefe0005d747c3f9e16b41049a11b0ba6e4fb05d46bc6c2eb92b4a1055410a0fe9c3b9000000000000000000", "CEF": "00000000000000000fe7463f8410f75042e9c22ba1757bd5d0baa8fae8413521043faaaafe000a54000c76e48c01ad01a582df1724015b4723809bfa93086252bdcc1bb9eb18132320350eeac556050c3cbdc33d456f2142847f00e3b65fb8006cb4603fb0ceb8105437120ba389fd85d0b88bc2e9a46fc105130cd0fea7562000000000000000000", "CRS": "00000000000000000fe2133f8417385042ea052ba1748425d0baefe2e84156bd043faaaafe001468000d3178bb01a6fe5a408a2b55c1fbe95a609727c6586a8e4e001add9ade1488dfca0e78b4910262455a426b103a606077b030db079fa000734c5c3fb90aa41049d11c0ba2dcf885d677b702e96373a1056cf320fea04a5000000000000000000", "CRF": "00000000000000000fe2133f8417385042ea052ba1748425d0baefe2e84152bd043faaaafe001568000d31f8bb0122fe5a427e2b55c058e95a60c227c65830ee4e0030bd9ade0290dfca04e4b491030b455a422b103a605977b030d7679fa000734c5c3fa10aa41041d11c0ba4dcf885d677b702e8e373a105ecf320fec04a5000000000000000000", "BES": "00000000000000000fec2bbf8410241042ea74eba175bcc5d0baf392e8412779043faaaafe000819000f28bfce824e1dd4418e7a92c1ea1e46102b4c4860603f891c06a086ae039751f208a9738d0267592b82e89e02801a70ac40f6dbefe0006d747c3f9e16b4104da11b0ba4e4fb05d66bc6c2ea12b4a105d410a0fefc3b9000000000000000000", "BEF": "00000000000000000fec2bbf8410241042ea74eba175bcc5d0baf392e8412379043faaaafe000919000f283fce82ca1dd4437a7a92c0491e46107e4c48603a5f891c2cc086ae158f51f20235738d030e592b82a89e02802370ac40fabbefe0006d747c3f8616b41045a11b0ba2e4fb05d66bc6c2eb92b4a1055410a0fe9c3b9000000000000000000", "BRS": "00000000000000000fec2bbf8410241042ea74eba175bcc5d0baf392e8412779043faaaafe000819000f28bfce852e1dd440e85a92c10a2e461027c448607cbf891c2ab886ae0d9b51f205bb738d03ee592b82ab9e02803970ac40de7befe0004d747c3f9e16b41041a11b0ba6e4fb05d76bc6c2ea92b4a105d410a0fedc3b9000000000000000000", "BRF": "00000000000000000fe42bbf8416ff5042e9c22ba175bcc5d0ba28fae84155a1043faaaafe000274000fbee4d505aa1dd440cf3724011bf52ba072c448607cb23fc43683eb181b8351f2046ac556044c349d42eb9e028169c67720cb765fb8004d747c3fb0ceb8104417100ba8e4fb05d5b0ab42eaa46fc1055410a0fee7562000000000000000000"};
+function qrBits(code){
+ const bits=[];for(const ch of QR_HEX[code]){const v=parseInt(ch,16);for(let k=3;k>=0;k--)bits.push((v>>k)&1)}
+ return bits.slice(0,QR_N*QR_N);
+}
+function clearParams(){try{history.replaceState(null,"",location.pathname)}catch(e){}document.title=SITE_NAME}
+function shortDesc(t){
+ const d=t.def;if(d.length<=110)return d;
+ const cut=d.slice(0,110),i=cut.lastIndexOf(" ");return (i>50?cut.slice(0,i):cut)+"…";
 }
 async function copyText(txt){
  try{await navigator.clipboard.writeText(txt);return true}catch(e){
-  try{const ta=document.createElement("textarea");ta.value=txt;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();const ok=document.execCommand("copy");ta.remove();return ok}catch(e2){return false}
+  try{const ta=document.createElement("textarea");ta.value=txt;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();ta.setSelectionRange(0,txt.length);const ok=document.execCommand("copy");ta.remove();return ok}catch(e2){return false}
  }
 }
 function roundRect(g,x,y,w,h,r){g.beginPath();g.moveTo(x+r,y);g.arcTo(x+w,y,x+w,y+h,r);g.arcTo(x+w,y+h,x,y+h,r);g.arcTo(x,y+h,x,y,r);g.arcTo(x,y,x+w,y,r);g.closePath()}
-function downloadImage(){
- const r=state.result,t=TYPES[r.code],W=1080,H=1500;
- const c=document.createElement("canvas");c.width=W;c.height=H;const g=c.getContext("2d");
- const font=(w,s)=>`${w} ${s}px "Noto Sans Thai",system-ui,sans-serif`;
- g.fillStyle="#FBF5EC";g.fillRect(0,0,W,H);
- g.fillStyle=t.color;g.globalAlpha=.13;g.fillRect(0,0,W,800);g.globalAlpha=1;
- g.textAlign="center";g.fillStyle="#75666A";g.font=font(600,30);g.fillText("YOUR LOVE TYPE",W/2,80);
- const finishDraw=()=>{
-  const bw=150,bh=180,gap=18,x0=(W-(bw*3+gap*2))/2,y0=800;
-  r.code.split("").forEach((l,i)=>{
-   const x=x0+i*(bw+gap);roundRect(g,x,y0,bw,bh,30);
-   if(i%2===0){g.fillStyle=t.color;g.fill();g.fillStyle="#fff"}else{g.fillStyle="#FFFCF7";g.fill();g.lineWidth=5;g.strokeStyle=t.color;g.stroke();g.fillStyle="#33252B"}
-   g.font=font(800,110);g.fillText(l,x+bw/2,y0+bh/2+38);
-  });
-  g.fillStyle="#33252B";g.font=font(800,52);g.fillText(t.en,W/2,1060);
-  g.fillStyle="#7A5BB0";g.font=font(600,40);g.fillText(t.th,W/2,1120);
-  DIMS.forEach((d,i)=>{
-   const y=1190+i*70,sc=r.scores[d.key];
-   g.textAlign="left";g.fillStyle="#33252B";g.font=font(600,30);g.fillText(d.name,120,y);
-   g.textAlign="right";g.fillText(`${sc} / 30`,W-120,y);
-   roundRect(g,120,y+14,W-240,16,8);g.fillStyle="#EBCFCB";g.fill();
-   roundRect(g,120,y+14,Math.max(16,(W-240)*(sc-6)/24),16,8);g.fillStyle=t.color;g.fill();
-  });
-  g.textAlign="center";g.fillStyle="#75666A";g.font=font(500,26);g.fillText("Love Personality Test",W/2,1450);
-  c.toBlob(b=>{
-   if(!b){toast("บันทึกภาพไม่สำเร็จ");return}
-   const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=`love-personality-${r.code}.png`;
-   document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),4000);
-   toast("บันทึกภาพผลลัพธ์แล้ว");
-  },"image/png");
- };
- const svgStr=CHARS[r.code]().replace("<svg ",'<svg width="600" height="650" ');
- const url=URL.createObjectURL(new Blob([svgStr],{type:"image/svg+xml"}));
- const img=new Image();
- img.onload=()=>{g.drawImage(img,(W-600)/2,110,600,650);URL.revokeObjectURL(url);finishDraw()};
- img.onerror=()=>{URL.revokeObjectURL(url);finishDraw()};
- img.src=url;
+function wrapLines(g,text,maxW,maxLines){
+ let toks;
+ try{toks=Array.from(new Intl.Segmenter("th",{granularity:"word"}).segment(text),x=>x.segment)}catch(e){toks=text.split(/(\s+)/)}
+ const lines=[];let cur="";
+ for(const tk of toks){
+  if(!cur||g.measureText(cur+tk).width<=maxW)cur+=tk;
+  else{lines.push(cur.trim());cur=tk.replace(/^\s+/,"")}
+ }
+ if(cur.trim())lines.push(cur.trim());
+ if(lines.length>maxLines){
+  lines.length=maxLines;let l=lines[maxLines-1].replace(/\s+$/,"");
+  while(l.length>2&&g.measureText(l+"…").width>maxW)l=l.slice(0,-1);
+  lines[maxLines-1]=l+"…";
+ }
+ return lines;
 }
-
-/* ---------------------------------------------------------- STORY IMAGE (1080x1920) */
+function drawMark(g,cx,cy,r){
+ const s=r/32;g.save();g.translate(cx-32*s,cy-32*s);g.scale(s,s);
+ g.lineWidth=4;g.strokeStyle="#B23A5E";g.beginPath();g.arc(32,32,28,0,Math.PI*2);g.stroke();
+ g.fillStyle="#F6E3DE";g.beginPath();g.arc(32,32,21,0,Math.PI*2);g.fill();
+ g.fillStyle="#B23A5E";g.fill(new Path2D("M32 46C18 37 21 24 28.5 25C31 25.4 32 28.5 32 28.5C32 28.5 33 25.4 35.5 25C43 24 46 37 32 46Z"));
+ g.restore();
+}
 function loadCharImage(code,w,h){
  return new Promise(res=>{
   const svgStr=CHARS[code]().replace("<svg ",`<svg width="${w}" height="${h}" `);
@@ -785,65 +949,145 @@ function loadCharImage(code,w,h){
   img.src=url;
  });
 }
+/* Result Card สำหรับสตอรี่ 1080x1920 (9:16) — เว้นขอบบน/ล่างไว้ไม่ให้ UI ของ Instagram บัง */
 async function makeStoryBlob(){
  const r=state.result,t=TYPES[r.code],W=1080,H=1920;
- try{await Promise.all([document.fonts.load('500 60px "Mitr"'),document.fonts.load('600 30px "Noto Sans Thai"')])}catch(e){}
- const head=(sz)=>`500 ${sz}px "Mitr","Noto Sans Thai",system-ui,sans-serif`;
+ try{await Promise.all([document.fonts.load('500 60px "Mitr"'),document.fonts.load('500 30px "Noto Sans Thai"'),document.fonts.load('600 30px "Noto Sans Thai"')])}catch(e){}
+ const head=sz=>`500 ${sz}px "Mitr","Noto Sans Thai",system-ui,sans-serif`;
  const body=(w,sz)=>`${w} ${sz}px "Noto Sans Thai",system-ui,sans-serif`;
  const c=document.createElement("canvas");c.width=W;c.height=H;const g=c.getContext("2d");
  const grad=g.createLinearGradient(0,0,W,H);grad.addColorStop(0,"#FBF1EA");grad.addColorStop(.55,"#F9E4E0");grad.addColorStop(1,"#EFE2F3");
  g.fillStyle=grad;g.fillRect(0,0,W,H);
- g.fillStyle=t.color;g.globalAlpha=.10;g.beginPath();g.arc(W/2,560,520,0,Math.PI*2);g.fill();g.globalAlpha=1;
- g.textAlign="center";
- g.fillStyle="#5B4C53";g.font=head(34);g.fillText("YOUR LOVE TYPE",W/2,262);
- // character card
- const cw=600,ch=650,cx=(W-cw)/2,cy=310;
- roundRect(g,cx,cy,cw,ch,48);g.fillStyle=t.color;g.globalAlpha=.16;g.fill();g.globalAlpha=1;
- g.save();roundRect(g,cx,cy,cw,ch,48);g.clip();
+ g.fillStyle=t.color;g.globalAlpha=.10;g.beginPath();g.arc(W/2,560,500,0,Math.PI*2);g.fill();g.globalAlpha=1;
+ // logo + site name
+ g.font=head(44);const nameW=g.measureText(SITE_NAME).width,gx=(W-(nameW+72))/2;
+ drawMark(g,gx+26,236,26);
+ g.textAlign="left";g.textBaseline="alphabetic";g.fillStyle="#2B1D24";g.fillText(SITE_NAME,gx+72,252);
+ g.textAlign="center";g.fillStyle="#5B4C53";g.font=body(600,28);g.fillText("YOUR LOVE TYPE",W/2,320);
+ // character
+ const ch=480,cw=Math.round(ch*240/260),cx=(W-cw)/2,cy=345;
+ roundRect(g,cx,cy,cw,ch,44);g.fillStyle=t.color;g.globalAlpha=.16;g.fill();g.globalAlpha=1;
+ g.save();roundRect(g,cx,cy,cw,ch,44);g.clip();
  const img=await loadCharImage(r.code,cw,ch);if(img)g.drawImage(img,cx,cy,cw,ch);
  g.restore();
- roundRect(g,cx,cy,cw,ch,48);g.lineWidth=6;g.strokeStyle="#FFFCF7";g.stroke();
- // letters
- const bw=150,bh=180,gap=18,x0=(W-(bw*3+gap*2))/2,y0=1000;
+ roundRect(g,cx,cy,cw,ch,44);g.lineWidth=6;g.strokeStyle="#FFFCF7";g.stroke();
+ // type letters
+ const bw=104,bh=130,gap=14,x0=(W-(bw*3+gap*2))/2,y0=855;
  r.code.split("").forEach((l,i)=>{
-  const x=x0+i*(bw+gap);roundRect(g,x,y0,bw,bh,32);
-  if(i%2===0){g.fillStyle=t.color;g.fill();g.fillStyle="#fff"}else{g.fillStyle="#FFFCF7";g.fill();g.lineWidth=6;g.strokeStyle=t.color;g.stroke();g.fillStyle="#2B1D24"}
-  g.font=head(112);g.fillText(l,x+bw/2,y0+bh/2+40);
+  const x=x0+i*(bw+gap);roundRect(g,x,y0,bw,bh,26);
+  if(i%2===0){g.fillStyle=t.color;g.fill();g.fillStyle="#fff"}else{g.fillStyle="#FFFCF7";g.fill();g.lineWidth=5;g.strokeStyle=t.color;g.stroke();g.fillStyle="#2B1D24"}
+  const lab=letterLabels(r)[i];g.font=head(lab.length>1?46:80);g.fillText(lab,x+bw/2,y0+bh/2+(lab.length>1?16:28));
  });
- // names
- g.fillStyle="#2B1D24";g.font=head(60);g.fillText(t.en,W/2,1270);
- g.fillStyle="#6B4CA6";g.font=head(48);g.fillText(t.th,W/2,1340);
- // scores
- DIMS.forEach((d,i)=>{
-  const y=1420+i*76,sc=r.scores[d.key],L=150,R=W-150;
-  g.textAlign="left";g.fillStyle="#2B1D24";g.font=body(600,30);g.fillText(d.name,L,y);
-  g.textAlign="right";g.fillText(sc+" / 30",R,y);
-  roundRect(g,L,y+14,R-L,16,8);g.fillStyle="#EBCFCB";g.fill();
-  roundRect(g,L,y+14,Math.max(16,(R-L)*(sc-6)/24),16,8);g.fillStyle=t.color;g.fill();
- });
- g.textAlign="center";g.fillStyle="#5B4C53";g.font=body(600,30);g.fillText("Love Personality Test",W/2,1700);
- g.font=body(500,26);g.fillStyle="#75666A";g.fillText("jtvg4b76mn-spec.github.io/Loves",W/2,1744);
+ // names + short description
+ g.fillStyle="#2B1D24";g.font=head(56);g.fillText(t.en,W/2,1060);
+ g.fillStyle="#6B4CA6";g.font=head(44);g.fillText(t.th,W/2,1120);
+ g.fillStyle="#5B4C53";g.font=body(500,31);
+ wrapLines(g,shortDesc(t),820,3).forEach((ln,i)=>g.fillText(ln,W/2,1192+i*44));
+ // call to action + QR
+ const px=100,py=1345,pw=880,ph=290;
+ roundRect(g,px,py,pw,ph,44);g.fillStyle="#FFFCF7";g.fill();g.lineWidth=3;g.strokeStyle="#DFCBB6";g.stroke();
+ g.textAlign="left";
+ g.fillStyle="#2B1D24";g.font=head(46);g.fillText("คุณเป็นแบบไหน?",px+42,py+92);
+ g.fillStyle="#B23A5E";g.fillText("ลองทำแบบทดสอบ",px+42,py+152);
+ g.fillStyle="#5B4C53";g.font=body(600,26);g.fillText("Discover Your Personality",px+42,py+202);
+ g.fillStyle="#75666A";g.font=body(500,22);g.fillText("jtvg4b76mn-spec.github.io/Loves",px+42,py+244);
+ const cell=7,quiet=2,box=(QR_N+quiet*2)*cell,bx=px+pw-28-box,by=py+Math.round((ph-box)/2);
+ roundRect(g,bx,by,box,box,20);g.fillStyle="#fff";g.fill();g.lineWidth=2;g.strokeStyle="#E5D6C4";g.stroke();
+ g.fillStyle="#2B1D24";
+ const bits=qrBits(r.code);
+ for(let y=0;y<QR_N;y++)for(let x=0;x<QR_N;x++)if(bits[y*QR_N+x])g.fillRect(bx+(quiet+x)*cell,by+(quiet+y)*cell,cell,cell);
  return new Promise(res=>c.toBlob(b=>res(b),"image/png"));
 }
 function saveBlob(blob,name){
  const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;
  document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),4000);
 }
-async function shareStory(){
- const r=state.result;toast("กำลังสร้างภาพสตอรี่…");
- let blob=null;try{blob=await makeStoryBlob()}catch(e){}
- if(!blob){toast("สร้างภาพไม่สำเร็จ ลองใหม่อีกครั้ง");return}
- const name=`love-personality-${r.code}-story.png`;
- pixel("/love-story-share","Love Personality Test – story share");
- try{
-  const file=new File([blob],name,{type:"image/png"});
-  if(navigator.canShare&&navigator.canShare({files:[file]})){
-   await navigator.share({files:[file],title:"Love Personality Test"});return;
-  }
- }catch(e){if(e&&e.name==="AbortError")return}
- saveBlob(blob,name);
- toast("บันทึกภาพแล้ว เปิด Instagram → สร้างสตอรี่ → เลือกภาพนี้");
+let cardPromise=null,cardCode=null;
+function prepareCard(){
+ if(!state.result)return Promise.resolve(null);
+ if(cardPromise&&cardCode===state.result.code)return cardPromise;
+ cardCode=state.result.code;
+ cardPromise=makeStoryBlob().then(b=>{if(!b)cardPromise=null;return b}).catch(()=>{cardPromise=null;return null});
+ return cardPromise;
 }
+
+/* ---- แชร์: ใช้ Web Share API ถ้ามี ไม่มีหรือใช้ไม่ได้ → sheet สำรอง (Share / Save Story / Copy Result Link) ---- */
+let previewURL=null;
+function closeSheet(){
+ const el=document.getElementById("sheet");if(el)el.remove();
+ if(previewURL){URL.revokeObjectURL(previewURL);previewURL=null}
+}
+async function shareCore(){
+ const r=state.result,t=TYPES[r.code],url=resultURL(r.code);
+ const base={title:`ผลบุคลิกภาพความรักของฉัน: ${t.en} – ${SITE_NAME}`,text:`${t.th} (${t.en}) · ${shortDesc(t)}`,url};
+ const blob=await prepareCard();
+ try{
+  let data=base;
+  if(blob){
+   const file=new File([blob],`love-personality-${r.code}.png`,{type:"image/png"});
+   if(navigator.canShare&&navigator.canShare({files:[file]}))data={...base,files:[file]};
+  }
+  await navigator.share(data);return "ok";
+ }catch(e){
+  if(e&&e.name==="AbortError")return "cancel";
+  try{await navigator.share(base);return "ok"}catch(e2){return e2&&e2.name==="AbortError"?"cancel":"fail"}
+ }
+}
+async function shareResult(){
+ const r=state.result;
+ pixel("/love-share","Love Personality Test – share");
+ copyText(resultURL(r.code)); // คัดลอกลิงก์ไว้ให้ วางในสติกเกอร์ลิงก์ของ Instagram ได้
+ if(!navigator.share){openShareSheet();return}
+ const res=await shareCore();
+ if(res==="ok")toast("แชร์แล้ว ถ้าลงสตอรี่ ให้เพิ่มสติกเกอร์ลิงก์ (คัดลอกลิงก์ไว้ให้แล้ว)");
+ else if(res==="fail")openShareSheet();
+}
+async function sheetShare(){
+ const res=await shareCore();
+ if(res==="ok")toast("แชร์แล้ว");
+ else if(res==="fail")toast("อุปกรณ์นี้แชร์โดยตรงไม่ได้ ใช้ Save Story หรือ Copy Result Link แทน");
+}
+async function copyLink(){
+ const ok=await copyText(resultURL(state.result.code));
+ toast(ok?"คัดลอกลิงก์ผลลัพธ์ของคุณแล้ว":"คัดลอกไม่สำเร็จ ลองกดค้างที่ลิงก์แล้วคัดลอกเอง");
+}
+async function saveStory(fromSheet){
+ if(IN_APP&&!fromSheet){openShareSheet();return}
+ toast("กำลังสร้างภาพ…");
+ const blob=await prepareCard();
+ if(!blob){toast("สร้างภาพไม่สำเร็จ ลองใหม่อีกครั้ง");return}
+ pixel("/love-save-story","Love Personality Test – save story");
+ saveBlob(blob,`love-personality-${state.result.code}-story.png`);
+ toast("บันทึกภาพแล้ว เปิด Instagram → สร้างสตอรี่ แล้วเพิ่มสติกเกอร์ลิงก์");
+}
+async function openShareSheet(){
+ closeSheet();
+ const r=state.result,url=resultURL(r.code),canShare=!!navigator.share;
+ const el=document.createElement("div");el.id="sheet";el.className="sheet-wrap";
+ el.innerHTML=`<div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sh-t">
+  <h2 id="sh-t" tabindex="-1">แชร์ผลลัพธ์ของคุณ</h2>
+  <p class="sub">แชร์ภาพนี้ลง Story และเพิ่มลิงก์เพื่อให้เพื่อนมาทำแบบทดสอบต่อได้</p>
+  ${IN_APP?`<p class="warn">คุณเปิดเว็บในเบราว์เซอร์ของแอป (Instagram / LINE / Facebook) บางปุ่มอาจใช้ไม่ได้ ถ้าบันทึกไม่ได้ให้กดค้างที่ภาพเพื่อบันทึก หรือเปิดลิงก์นี้ใน Safari / Chrome</p>`:""}
+  <div class="card-preview" id="sh-prev"><span>กำลังสร้างภาพ…</span></div>
+  <p class="sub" style="font-size:14px;margin:6px 0 10px">กดค้างที่ภาพเพื่อบันทึกได้</p>
+  <div class="linkbox">${url}</div>
+  <div class="row" style="margin-top:14px">
+   ${canShare?`<button class="btn btn-primary btn-block" data-action="sheetShare">Share<small>แชร์</small></button>`:""}
+   <button class="btn ${canShare?"btn-ghost":"btn-primary"} btn-block" data-action="saveStory">Save Story<small>บันทึกภาพสตอรี่</small></button>
+   <button class="btn btn-ghost btn-block" data-action="copyLink">Copy Result Link<small>คัดลอกลิงก์ผลลัพธ์</small></button>
+   <button class="btn btn-ghost btn-block" data-action="closeSheet">ปิด</button>
+  </div>
+  <p class="sub" style="margin:12px 0 0;font-size:14px">ใน Instagram: แตะสติกเกอร์ → ลิงก์ → วางลิงก์ที่คัดลอกไว้</p>
+ </div>`;
+ el.addEventListener("click",e=>{if(e.target===el)closeSheet()});
+ document.body.appendChild(el);
+ const h=el.querySelector("#sh-t");if(h)h.focus({preventScroll:true});
+ const blob=await prepareCard();
+ const box=document.getElementById("sh-prev");if(!box)return;
+ if(blob){previewURL=URL.createObjectURL(blob);box.innerHTML=`<img src="${previewURL}" alt="ภาพผลลัพธ์สำหรับสตอรี่">`}
+ else box.innerHTML="<span>สร้างภาพไม่สำเร็จ แต่ยังคัดลอกลิงก์ได้</span>";
+}
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeSheet()});
 
 const actions={
  scrollTypes(){
@@ -851,7 +1095,7 @@ const actions={
   const reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   el.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});
  },
- home(){clearTimeout(advanceTimer);state.screen="intro";renderIntro();window.scrollTo({top:0})},
+ home(){clearTimeout(advanceTimer);clearParams();state.screen="intro";renderIntro();window.scrollTo({top:0})},
  start(){
   if(state.result)return actions.viewResult();
   if(state.answers.every(a=>a===null))state.idx=0;
@@ -859,15 +1103,22 @@ const actions={
   if(state.idx>=getItems().length)state.idx=0;
   saveState();renderQuiz(true);window.scrollTo({top:0});
  },
+ startFresh(){clearParams();resetState();state.screen="quiz";saveState();renderQuiz(true);window.scrollTo({top:0})},
+ viewMine(){clearParams();state.screen="result";renderResult()},
  viewResult(){state.screen="result";renderResult()},
- restart(){resetState();state.screen="quiz";saveState();renderQuiz(true);window.scrollTo({top:0})},
+ restart(){clearParams();resetState();state.screen="quiz";saveState();renderQuiz(true);window.scrollTo({top:0})},
  answer(btn){
   const item=getItems()[state.idx];if(!item)return;
-  const v=parseInt(btn.dataset.value,10);if(!(v>=1&&v<=5))return;
-  if(item.type==="q")state.answers[item.i]=v;else state.tie[item.axis]=v;
+  if(item.type==="ab"){
+   const v=btn.dataset.value;if(v!=="hi"&&v!=="lo"&&v!=="mid")return;
+   ensureTie(item.axis);state.tie[item.axis].ab=v;
+  }else{
+   const v=parseInt(btn.dataset.value,10);if(!(v>=1&&v<=5))return;
+   if(item.type==="q")state.answers[item.i]=v;else{ensureTie(item.axis);state.tie[item.axis].a[item.k]=v}
+  }
   state.tieAxes=computeTieAxes();
   saveState();renderQuiz(false);
-  const dot=app.querySelector(`.dot[data-value="${v}"]`);if(dot)dot.focus({preventScroll:true});
+  const sel=app.querySelector(item.type==="ab"?`.choice[data-value="${btn.dataset.value}"]`:`.dot[data-value="${btn.dataset.value}"]`);if(sel)sel.focus({preventScroll:true});
   const items=getItems();
   if(state.idx<items.length-1){clearTimeout(advanceTimer);advanceTimer=setTimeout(()=>{if(state.screen==="quiz")actions.next()},340)}
  },
@@ -882,15 +1133,11 @@ const actions={
   clearTimeout(advanceTimer);
   if(state.idx>0){state.idx--;saveState();renderQuiz("back")}
  },
- async copy(){toast(await copyText(summaryText())?"คัดลอกผลลัพธ์แล้ว":"คัดลอกไม่สำเร็จ")},
- download(){downloadImage()},
- async share(){
-  const r=state.result,t=TYPES[r.code];
-  const text=`ฉันได้ผล ${r.code} · ${t.en} (${t.th}) จาก Love Personality Test`,url=location.href.split("#")[0];
-  try{if(navigator.share){await navigator.share({title:"Love Personality Test",text,url});return}}catch(e){if(e&&e.name==="AbortError")return}
-  toast(await copyText(`${text}\n${url}`)?"คัดลอกข้อความสำหรับแชร์แล้ว":"แชร์ไม่สำเร็จ");
- },
- story(){shareStory()},
+ shareResult(){shareResult()},
+ sheetShare(){sheetShare()},
+ copyLink(){copyLink()},
+ saveStory(btn){saveStory(!!(btn&&btn.closest&&btn.closest("#sheet")))},
+ closeSheet(){closeSheet()},
  print(){window.print()}
 };
 document.addEventListener("click",e=>{
@@ -899,7 +1146,10 @@ document.addEventListener("click",e=>{
 });
 document.addEventListener("keydown",e=>{
  if(state.screen!=="quiz"||e.metaKey||e.ctrlKey||e.altKey)return;
- if(/^[1-5]$/.test(e.key)){const d=app.querySelector(`.dot[data-value="${e.key}"]`);if(d)actions.answer(d)}
+ if(/^[1-5]$/.test(e.key)){
+  const d=app.querySelector(`.dot[data-value="${e.key}"]`)||app.querySelector(`.choice[data-pos="${e.key}"]`);
+  if(d)actions.answer(d);
+ }
 });
 
 loadState();
