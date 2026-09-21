@@ -696,7 +696,8 @@ function renderResult(){
      ${letters.map(l=>`<div class="letter"><div class="l">${l}</div><div><b>${AXES[l].name}</b><span>${AXES[l].th}</span></div></div>`).join("")}</div></div>
    </div>
    <div class="actions">
-    <button class="btn btn-primary wide" data-action="restart">ทำแบบทดสอบอีกครั้ง</button>
+    <button class="btn btn-primary wide" data-action="story">แชร์ลงสตอรี่ Instagram</button>
+    <button class="btn btn-ghost wide" data-action="restart">ทำแบบทดสอบอีกครั้ง</button>
     <button class="btn btn-ghost" data-action="copy">คัดลอกผลลัพธ์</button>
     <button class="btn btn-ghost" data-action="download">ดาวน์โหลดผลลัพธ์เป็นภาพ</button>
     <button class="btn btn-ghost" data-action="share">แชร์ผลลัพธ์</button>
@@ -773,6 +774,77 @@ function downloadImage(){
  img.src=url;
 }
 
+/* ---------------------------------------------------------- STORY IMAGE (1080x1920) */
+function loadCharImage(code,w,h){
+ return new Promise(res=>{
+  const svgStr=CHARS[code]().replace("<svg ",`<svg width="${w}" height="${h}" `);
+  const url=URL.createObjectURL(new Blob([svgStr],{type:"image/svg+xml"}));
+  const img=new Image();
+  img.onload=()=>{URL.revokeObjectURL(url);res(img)};
+  img.onerror=()=>{URL.revokeObjectURL(url);res(null)};
+  img.src=url;
+ });
+}
+async function makeStoryBlob(){
+ const r=state.result,t=TYPES[r.code],W=1080,H=1920;
+ try{await Promise.all([document.fonts.load('500 60px "Mitr"'),document.fonts.load('600 30px "Noto Sans Thai"')])}catch(e){}
+ const head=(sz)=>`500 ${sz}px "Mitr","Noto Sans Thai",system-ui,sans-serif`;
+ const body=(w,sz)=>`${w} ${sz}px "Noto Sans Thai",system-ui,sans-serif`;
+ const c=document.createElement("canvas");c.width=W;c.height=H;const g=c.getContext("2d");
+ const grad=g.createLinearGradient(0,0,W,H);grad.addColorStop(0,"#FBF1EA");grad.addColorStop(.55,"#F9E4E0");grad.addColorStop(1,"#EFE2F3");
+ g.fillStyle=grad;g.fillRect(0,0,W,H);
+ g.fillStyle=t.color;g.globalAlpha=.10;g.beginPath();g.arc(W/2,560,520,0,Math.PI*2);g.fill();g.globalAlpha=1;
+ g.textAlign="center";
+ g.fillStyle="#5B4C53";g.font=head(34);g.fillText("YOUR LOVE TYPE",W/2,262);
+ // character card
+ const cw=600,ch=650,cx=(W-cw)/2,cy=310;
+ roundRect(g,cx,cy,cw,ch,48);g.fillStyle=t.color;g.globalAlpha=.16;g.fill();g.globalAlpha=1;
+ g.save();roundRect(g,cx,cy,cw,ch,48);g.clip();
+ const img=await loadCharImage(r.code,cw,ch);if(img)g.drawImage(img,cx,cy,cw,ch);
+ g.restore();
+ roundRect(g,cx,cy,cw,ch,48);g.lineWidth=6;g.strokeStyle="#FFFCF7";g.stroke();
+ // letters
+ const bw=150,bh=180,gap=18,x0=(W-(bw*3+gap*2))/2,y0=1000;
+ r.code.split("").forEach((l,i)=>{
+  const x=x0+i*(bw+gap);roundRect(g,x,y0,bw,bh,32);
+  if(i%2===0){g.fillStyle=t.color;g.fill();g.fillStyle="#fff"}else{g.fillStyle="#FFFCF7";g.fill();g.lineWidth=6;g.strokeStyle=t.color;g.stroke();g.fillStyle="#2B1D24"}
+  g.font=head(112);g.fillText(l,x+bw/2,y0+bh/2+40);
+ });
+ // names
+ g.fillStyle="#2B1D24";g.font=head(60);g.fillText(t.en,W/2,1270);
+ g.fillStyle="#6B4CA6";g.font=head(48);g.fillText(t.th,W/2,1340);
+ // scores
+ DIMS.forEach((d,i)=>{
+  const y=1420+i*76,sc=r.scores[d.key],L=150,R=W-150;
+  g.textAlign="left";g.fillStyle="#2B1D24";g.font=body(600,30);g.fillText(d.name,L,y);
+  g.textAlign="right";g.fillText(sc+" / 30",R,y);
+  roundRect(g,L,y+14,R-L,16,8);g.fillStyle="#EBCFCB";g.fill();
+  roundRect(g,L,y+14,Math.max(16,(R-L)*(sc-6)/24),16,8);g.fillStyle=t.color;g.fill();
+ });
+ g.textAlign="center";g.fillStyle="#5B4C53";g.font=body(600,30);g.fillText("Love Personality Test",W/2,1700);
+ g.font=body(500,26);g.fillStyle="#75666A";g.fillText("jtvg4b76mn-spec.github.io/Loves",W/2,1744);
+ return new Promise(res=>c.toBlob(b=>res(b),"image/png"));
+}
+function saveBlob(blob,name){
+ const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;
+ document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),4000);
+}
+async function shareStory(){
+ const r=state.result;toast("กำลังสร้างภาพสตอรี่…");
+ let blob=null;try{blob=await makeStoryBlob()}catch(e){}
+ if(!blob){toast("สร้างภาพไม่สำเร็จ ลองใหม่อีกครั้ง");return}
+ const name=`love-personality-${r.code}-story.png`;
+ pixel("/love-story-share","Love Personality Test – story share");
+ try{
+  const file=new File([blob],name,{type:"image/png"});
+  if(navigator.canShare&&navigator.canShare({files:[file]})){
+   await navigator.share({files:[file],title:"Love Personality Test"});return;
+  }
+ }catch(e){if(e&&e.name==="AbortError")return}
+ saveBlob(blob,name);
+ toast("บันทึกภาพแล้ว เปิด Instagram → สร้างสตอรี่ → เลือกภาพนี้");
+}
+
 const actions={
  scrollTypes(){
   const el=document.getElementById("types");if(!el)return;
@@ -818,6 +890,7 @@ const actions={
   try{if(navigator.share){await navigator.share({title:"Love Personality Test",text,url});return}}catch(e){if(e&&e.name==="AbortError")return}
   toast(await copyText(`${text}\n${url}`)?"คัดลอกข้อความสำหรับแชร์แล้ว":"แชร์ไม่สำเร็จ");
  },
+ story(){shareStory()},
  print(){window.print()}
 };
 document.addEventListener("click",e=>{
