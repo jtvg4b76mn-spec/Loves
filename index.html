@@ -531,6 +531,30 @@ function resetState(){
  Object.values(KEY).forEach(store.del);
 }
 
+/* ------------------------------------------------------------ TRACKING
+   นับจำนวนผู้เข้าชมและผู้ทำแบบทดสอบเสร็จด้วย GoatCounter (ไม่เก็บคำตอบ ไม่ใช้คุกกี้)
+   ใส่ code ของ GoatCounter ที่นี่ เช่น "love-personality" (จะได้ลิงก์ love-personality.goatcounter.com)
+   ปล่อยเป็น "" = ปิดการนับ */
+const TRACKING={goatcounter:"love-personality",visitPath:"/love-visit",completePath:"/love-completed"};
+const COUNTED_KEY="lpt-completion-counted-v1";
+const trackingOn=()=>!!TRACKING.goatcounter;
+function pixel(path,title){
+ if(!trackingOn())return;
+ try{
+  const img=new Image();
+  img.referrerPolicy="no-referrer-when-downgrade";
+  img.src="https://"+encodeURIComponent(TRACKING.goatcounter)+".goatcounter.com/count?p="+encodeURIComponent(path)+"&t="+encodeURIComponent(title)+"&rnd="+Math.random().toString(36).slice(2);
+ }catch(e){}
+}
+function trackVisit(){pixel(TRACKING.visitPath,"Love Personality Test – visit")}
+function trackCompletion(){
+ if(!trackingOn())return;
+ try{if(localStorage.getItem(COUNTED_KEY))return}catch(e){}
+ pixel(TRACKING.completePath,"Love Personality Test – completed");
+ try{localStorage.setItem(COUNTED_KEY,"1")}catch(e){}
+}
+const PRIVACY=()=>"คำตอบของคุณจะถูกประมวลผลบนอุปกรณ์นี้ และจะไม่ถูกส่งไปยังเซิร์ฟเวอร์"+(trackingOn()?" (ระบบนับเฉพาะจำนวนผู้เข้าชมและผู้ทำแบบทดสอบเสร็จแบบไม่ระบุตัวตน โดยไม่เก็บคำตอบของคุณ)":"");
+
 /* ------------------------------------------------------------------ UI */
 function focusHeading(){
  const el=app.querySelector("[data-focus]");
@@ -586,7 +610,7 @@ function renderIntro(){
   <p class="note">แบบทดสอบนี้ใช้เพื่อสำรวจแนวโน้มด้านความรักและความสัมพันธ์ ไม่ใช่เครื่องมือวินิจฉัยทางจิตวิทยา ผลลัพธ์ไม่ควรใช้เพื่อตัดสินคุณค่าของบุคคลหรือความเหมาะสมของความสัมพันธ์เพียงอย่างเดียว</p>
   <div class="start stack-btns">${primaryButtons()}
    <button class="btn btn-ghost btn-block" data-action="scrollTypes">ดูบุคลิกภาพทั้ง 8 แบบ</button></div>
-  <p class="note" style="border-style:solid">คำตอบของคุณจะถูกประมวลผลบนอุปกรณ์นี้ และจะไม่ถูกส่งไปยังเซิร์ฟเวอร์</p>
+  <p class="note" style="border-style:solid">${PRIVACY()}</p>
  </section>
  ${galleryHTML()}`;
  focusHeading();
@@ -679,7 +703,7 @@ function renderResult(){
     <button class="btn btn-ghost" data-action="print">พิมพ์ / บันทึกเป็น PDF</button>
    </div>
    <p class="disclaimer">แบบทดสอบนี้ใช้เพื่อสำรวจแนวโน้มด้านความรักและความสัมพันธ์ ไม่ใช่เครื่องมือวินิจฉัยทางจิตวิทยา ผลลัพธ์ไม่ควรใช้เพื่อตัดสินคุณค่าของบุคคลหรือความเหมาะสมของความสัมพันธ์เพียงอย่างเดียว</p>
-   <p class="disclaimer">คำตอบของคุณจะถูกประมวลผลบนอุปกรณ์นี้ และจะไม่ถูกส่งไปยังเซิร์ฟเวอร์</p>
+   <p class="disclaimer">${PRIVACY()}</p>
   </div>
  </section>`;
  requestAnimationFrame(()=>requestAnimationFrame(()=>app.querySelectorAll(".pair-bar i").forEach(i=>i.style.width=i.dataset.w+"%")));
@@ -696,7 +720,7 @@ function render(anim){
 function finish(){
  const scores={};DIMS.forEach(d=>scores[d.key]=dimScore(d));
  state.result={code:DIMS.map(letterFor).join(""),scores};
- state.screen="result";saveState();
+ state.screen="result";saveState();trackCompletion();
  renderProcessing();
  setTimeout(()=>{if(state.screen==="result")renderResult()},1800);
 }
@@ -807,6 +831,7 @@ document.addEventListener("keydown",e=>{
 
 loadState();
 render();
+trackVisit();
 </script>
 </body>
 </html>
