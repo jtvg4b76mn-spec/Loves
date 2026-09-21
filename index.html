@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Love Personality Test</title>
+<meta name="description" content="Love Personality Test – ค้นหารูปแบบความรักของคุณผ่าน 18 คำถาม และทำความรู้จักวิธีที่คุณเชื่อมโยง แสดงความรู้สึก และรักษาความสัมพันธ์">
+<meta property="og:title" content="Love Personality Test">
+<meta property="og:description" content="Find Your Love Style, Understand How You Connect">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jtvg4b76mn-spec.github.io/-/">
+<meta property="og:image" content="https://jtvg4b76mn-spec.github.io/-/love-personality-preview.png?v=3">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Love Personality Test – Find Your Love Style, Understand How You Connect">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jtvg4b76mn-spec.github.io/-/love-personality-preview.png?v=3">
+<meta name="twitter:title" content="Love Personality Test">
+<meta name="twitter:description" content="Find Your Love Style, Understand How You Connect">
+<meta name="theme-color" content="#FBF5EC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600&family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#2B1D24; --primary:#B23A5E; --primary-2:#9A2F50; --on-primary:#fff;
+  --tint:#F6E3DE; --tint-2:#FBF1EC; --accent:#E8735A; --purple:#6B4CA6; --green:#2F8F6B;
+  --dot-agree:#B23A5E; --dot-disagree:#6B4CA6; --dot-agree-text:#A32B50; --dot-disagree-text:#5A3D96;
+  --bg:#FBF5EC; --surface:#FFFCF7; --text:#2B1D24; --muted:#5B4C53; --line:#DFCBB6;
+  --shadow:0 6px 24px rgba(90,50,40,.09);
+  --bar-a:#B23A5E; --bar-b:#EBCFCB; --a:#B23A5E;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#F3E9EE; --primary:#E8798F; --primary-2:#F08FA2; --on-primary:#1B1320;
+    --tint:#3A2740; --tint-2:#2B1E31; --accent:#F0906F; --purple:#B39CF5; --green:#5FD39B;
+    --dot-agree:#F08FA2; --dot-disagree:#B39CF5; --dot-agree-text:#F4A3B3; --dot-disagree-text:#C7B6FA;
+    --bg:#181119; --surface:#231A29; --text:#F3E9EE; --muted:#D0C0CC; --line:#42324A;
+    --shadow:0 6px 24px rgba(0,0,0,.4); --bar-a:#E8798F; --bar-b:#4A3652;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#F3E9EE; --primary:#E8798F; --primary-2:#F08FA2; --on-primary:#1B1320;
+  --tint:#3A2740; --tint-2:#2B1E31; --accent:#F0906F; --purple:#B39CF5; --green:#5FD39B;
+  --dot-agree:#F08FA2; --dot-disagree:#B39CF5; --dot-agree-text:#F4A3B3; --dot-disagree-text:#C7B6FA;
+  --bg:#181119; --surface:#231A29; --text:#F3E9EE; --muted:#D0C0CC; --line:#42324A;
+  --shadow:0 6px 24px rgba(0,0,0,.4); --bar-a:#E8798F; --bar-b:#4A3652;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans Thai","Sarabun","Leelawadee UI",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;font-weight:500;line-height:1.75;min-height:100vh}
+.wrap{max-width:680px;margin:0 auto;padding:calc(20px + env(safe-area-inset-top,0px)) 18px calc(56px + env(safe-area-inset-bottom,0px))}
+h1,h2,h3,h4{line-height:1.35;margin:0;font-family:"Mitr","Noto Sans Thai",system-ui,sans-serif;font-weight:500}
+.wm,.letters span,.tc-code span,.letter .l,.brand,.tagline,.pair-title{font-family:"Mitr","Noto Sans Thai",system-ui,sans-serif;font-weight:500}
+p{margin:0}
+
+/* header */
+header.top{display:flex;align-items:center;gap:10px;padding:6px 0 22px}
+header.top[hidden]{display:none}
+header.top .brand{min-width:0;line-height:1.25;font-weight:700;font-size:16px;letter-spacing:.2px}
+.mark{display:block;flex:none}
+.home-btn{margin-left:auto;display:inline-flex;align-items:center;gap:6px;appearance:none;cursor:pointer;font:inherit;font-size:14px;font-weight:600;color:var(--text);background:transparent;border:1.5px solid var(--line);border-radius:999px;padding:8px 14px;min-height:40px;white-space:nowrap;flex:none;transition:background .15s,transform .12s}
+.home-btn:hover{background:var(--tint-2)}
+.home-btn:active{transform:scale(.97)}
+@media (max-width:420px){header.top{gap:8px}header.top .brand{font-size:14px}.home-btn{padding:8px 12px;font-size:13.5px}}
+
+/* wordmark */
+.wm{font-weight:800;letter-spacing:6px}
+.wm i{font-style:normal}
+.wm i:nth-of-type(1){color:var(--primary)}.wm i:nth-of-type(2){color:var(--purple)}.wm i:nth-of-type(3){color:var(--accent)}.wm i:nth-of-type(4){color:var(--primary)}
+.hero-logo{display:flex;flex-direction:column;align-items:center;text-align:center;padding:14px 0 4px}
+.hero-logo h1{margin-top:14px}
+.hero-logo .wm{display:block;font-size:clamp(46px,14vw,72px);line-height:1.1}
+.hero-logo .sub{display:block;font-size:clamp(19px,5vw,24px);font-weight:600;color:var(--muted);letter-spacing:3px;margin-top:2px}
+.tagline{color:var(--purple);font-weight:700;font-size:clamp(16px,4.4vw,19px);margin:12px 0 0;text-align:center}
+.th-name{color:var(--muted);font-size:15px;margin:4px 0 0;text-align:center}
+.purpose{margin:22px 0 0;font-size:16px}
+.page-title{font-size:19px;font-weight:700;margin:0 0 14px}
+
+/* card / buttons */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:26px 22px}
+.lead{color:var(--muted);font-size:16px;margin:10px 0 0}
+.note{margin-top:18px;padding:12px 14px;border-radius:14px;background:var(--tint-2);border:1px dashed var(--line);color:var(--muted);font-size:15px}
+.btn{appearance:none;border:0;cursor:pointer;font:inherit;font-weight:600;border-radius:14px;padding:13px 20px;min-height:48px;transition:transform .12s,background .15s,box-shadow .15s,opacity .15s}
+.btn:active:not(:disabled){transform:scale(.98)}
+.btn-primary{background:var(--primary);color:var(--on-primary)}
+.btn-primary:hover:not(:disabled){background:var(--primary-2)}
+.btn-ghost{background:transparent;color:var(--text);border:1.5px solid var(--line)}
+.btn-ghost:hover:not(:disabled){background:var(--tint-2)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn-block{width:100%}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:12px}
+.start{margin-top:22px}
+.stack-btns .btn+.btn{margin-top:10px}
+
+/* quiz */
+.progress-meta{display:flex;justify-content:space-between;font-size:15px;color:var(--muted);margin-bottom:8px}
+.bar{height:10px;background:var(--tint);border-radius:999px;overflow:hidden}
+.bar>i{display:block;height:100%;background:var(--primary);border-radius:999px;transition:width .35s ease}
+.q-card{margin-top:18px;padding:30px 22px 24px}
+.q-kicker{color:var(--muted);font-size:15px;margin:0 0 8px;text-align:center}
+.q-text{font-size:clamp(21px,5.4vw,27px);font-weight:700;min-height:96px;text-align:center}
+.likert{margin-top:26px}
+.likert-row{display:grid;grid-template-columns:repeat(5,1fr);align-items:center}
+.likert-labels{align-items:end;margin-bottom:12px}
+.ll{text-align:center;font-size:13.5px;font-weight:600;line-height:1.35;color:var(--muted)}
+.ll.agree{color:var(--dot-agree-text)}.ll.disagree{color:var(--dot-disagree-text)}
+.cell{display:flex;justify-content:center;align-items:center;height:64px}
+.dot{--c:var(--muted);appearance:none;cursor:pointer;padding:0;display:grid;place-items:center;border-radius:50%;background:var(--surface);border:3px solid var(--c);transition:transform .12s,background .15s,box-shadow .15s}
+.dot.agree{--c:var(--dot-agree)}.dot.disagree{--c:var(--dot-disagree)}
+.dot.xl{width:50px;height:50px}.dot.l{width:40px;height:40px}.dot.m{width:32px;height:32px}
+.dot svg{width:60%;height:60%;fill:none;stroke:var(--surface);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;opacity:0;transform:scale(.6);transition:opacity .15s,transform .15s}
+.dot:hover{background:color-mix(in srgb,var(--c) 16%,transparent);transform:scale(1.06)}
+.dot[aria-checked="true"]{background:var(--c)}
+.dot[aria-checked="true"] svg{opacity:1;transform:none}
+@media (min-width:640px){.dot.xl{width:62px;height:62px}.dot.l{width:50px;height:50px}.dot.m{width:38px;height:38px}.cell{height:74px}.ll{font-size:15px}}
+.nav{display:flex;gap:12px;margin-top:18px}
+.nav .btn-primary{flex:1}
+.enter{animation:slideIn .38s ease both}
+@keyframes slideIn{from{opacity:0;transform:translateX(22px)}to{opacity:1;transform:none}}
+.enter-back{animation:slideBack .38s ease both}
+@keyframes slideBack{from{opacity:0;transform:translateX(-22px)}to{opacity:1;transform:none}}
+
+/* processing */
+.processing{text-align:center;padding:60px 10px}
+.spinner{width:54px;height:54px;margin:0 auto 22px;border-radius:50%;border:5px solid var(--tint);border-top-color:var(--primary);animation:spin .9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* gallery */
+.gallery{margin-top:34px}
+.gallery-head h2{font-size:clamp(22px,6vw,28px);font-weight:800}
+.gallery-head p{color:var(--muted);margin:6px 0 0}
+.type-card{margin-top:20px;padding:0;overflow:hidden;scroll-margin-top:16px}
+.illus{aspect-ratio:10/9;background:color-mix(in srgb,var(--a) 14%,var(--surface));border-bottom:1px solid var(--line)}
+.illus svg{display:block;width:100%;height:100%}
+.type-card .body{padding:18px 20px 22px}
+.tc-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.tc-no{font-size:14px;color:var(--muted)}
+.tc-code{display:inline-flex;gap:3px}
+.tc-code span{display:inline-grid;place-items:center;width:26px;height:30px;border-radius:8px;background:var(--a);color:#fff;font-weight:800;font-size:15px}
+.tc-code span:nth-child(even){background:color-mix(in srgb,var(--a) 16%,var(--surface));color:var(--text)}
+.type-card h3{font-size:22px;font-weight:800;margin-top:10px}
+.type-card .th{color:var(--purple);font-weight:600;margin-top:2px}
+.type-card .d{color:var(--muted);margin:10px 0 0}
+.type-card h4{font-size:15px;margin:16px 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips li{background:var(--tint-2);border:1px solid var(--a);color:var(--text);border-radius:999px;padding:4px 12px;font-size:15px}
+.gallery-note{color:var(--muted);font-size:14.5px;margin-top:16px}
+.end-cta{margin-top:22px;text-align:center}
+
+/* result */
+.type-illus{display:block;width:min(280px,78%);aspect-ratio:240/260;margin:0 auto 20px;border-radius:22px;border:1px solid var(--line);background:color-mix(in srgb,var(--a) 14%,var(--surface));box-shadow:var(--shadow);overflow:hidden}
+.type-illus svg{display:block;width:100%;height:100%}
+.result-hero{text-align:center;padding:34px 18px 28px;background:var(--tint-2)}
+.letters{display:flex;justify-content:center;gap:8px}
+.letters span{display:grid;place-items:center;width:clamp(58px,17vw,84px);height:clamp(72px,21vw,104px);border-radius:18px;background:var(--a);color:#fff;font-size:clamp(38px,12vw,58px);font-weight:800;line-height:1}
+.letters span:nth-child(even){background:var(--surface);color:var(--text);border:2px solid var(--a)}
+.type-en{font-size:clamp(24px,6.5vw,32px);font-weight:800;margin-top:20px}
+.type-th{color:var(--purple);font-weight:600;font-size:18px}
+.type-desc{color:var(--muted);margin:12px auto 0;max-width:46ch}
+.section{margin-top:26px}
+.section h2{font-size:20px;margin-bottom:12px}
+.mini-note{margin:-4px 0 12px;color:var(--muted);font-size:14.5px}
+.pair{margin-bottom:20px}
+.pair-title{display:flex;justify-content:space-between;align-items:baseline;font-weight:700;margin-bottom:2px}
+.pair-title small{color:var(--muted);font-weight:500;font-size:13px}
+.pair-head{display:flex;justify-content:space-between;font-size:14.5px;font-weight:600;margin-bottom:6px;gap:8px}
+.pair-head .r{text-align:right}
+.pair-bar{display:flex;height:16px;border-radius:999px;overflow:hidden;background:var(--bar-b)}
+.pair-bar i{display:block;background:var(--bar-a);transition:width .8s ease}
+.pair-note{font-size:13.5px;color:var(--muted);margin-top:4px}
+.info-grid{display:grid;gap:14px}
+.info{border:1px solid var(--line);border-radius:18px;padding:16px 18px;background:var(--surface)}
+.info h3{font-size:17px;margin-bottom:6px}
+.info p{color:var(--muted)}
+.info p+p{margin-top:10px}
+.letter-list{display:grid;gap:12px}
+.letter{display:flex;gap:14px;align-items:flex-start}
+.letter .l{flex:none;width:44px;height:44px;border-radius:14px;background:var(--a);color:#fff;font-weight:800;font-size:22px;display:grid;place-items:center}
+.letter b{display:block;line-height:1.4}
+.letter span{display:block;font-size:14.5px;color:var(--muted);line-height:1.6}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
+.actions .wide{grid-column:1/-1}
+.disclaimer{margin-top:24px;font-size:14.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+.disclaimer+.disclaimer{margin-top:10px;border-top:0;padding-top:0}
+
+/* credit */
+.credit{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:14.5px;line-height:1.7}
+.credit p{margin:0}
+.credit strong{color:var(--text)}
+.credit a{color:var(--primary);text-decoration:none;font-weight:600;word-break:break-all}
+.credit a:hover{text-decoration:underline}
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:999px;font-size:14.5px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:10;max-width:calc(100vw - 32px);text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .spinner{animation:none;border-top-color:var(--primary)}
+}
+@media (min-width:640px){
+  .wrap{padding-top:40px}
+  .card{padding:34px 32px}
+  .actions{grid-template-columns:repeat(4,1fr)}
+  .actions .wide{grid-column:auto}
+  .info-grid{grid-template-columns:1fr 1fr}
+  .info-grid .full{grid-column:1/-1}
+}
+@media print{
+  @page{margin:14mm}
+  body{background:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  header.top,.actions,.nav,.toast,.gallery{display:none!important}
+  .card{box-shadow:none!important;break-inside:avoid}
+  .wrap{max-width:none;padding:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top" id="top" hidden>
+    <span id="topmark"></span>
+    <span class="brand">Love Personality Test</span>
+    <button class="home-btn" data-action="home" aria-label="กลับหน้าแรก">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>
+      หน้าแรก
+    </button>
+  </header>
+  <main id="app" aria-live="polite"></main>
+  <footer class="credit">
+    <p class="credit-name">Created by <strong>Pornpong Pasokpuckdee</strong></p>
+    <p>Questionnaire design services available</p>
+    <p><a href="mailto:pronpong.pasok@gmail.com">pronpong.pasok@gmail.com</a></p>
+  </footer>
+</div>
+<div id="toast" class="toast" role="status"></div>
+<noscript><p style="padding:24px">ต้องเปิดใช้งาน JavaScript เพื่อทำแบบทดสอบนี้</p></noscript>
+
+<script>
+
+/* ------------------------------------------------------------------ DATA */
+const QUESTIONS=[
+ "ฉันเปิดใจคุยเรื่องความรู้สึกกับคนที่ไว้ใจได้",
+ "ฉันไม่ค่อยอยากฟังเรื่องความรู้สึกของคนอื่น",
+ "ฉันพยายามเข้าใจความรู้สึกของคนอื่นก่อนตัดสินเขา",
+ "ฉันไม่ค่อยได้สังเกตว่าคนรอบตัวกำลังรู้สึกอย่างไร",
+ "ฉันให้ความสำคัญกับความไว้วางใจของคนรอบข้าง",
+ "เวลามีความขัดแย้ง ฉันมักไม่สนใจมุมมองของอีกฝ่าย",
+ "ถ้าฉันสนใจอะไร ฉันจะแสดงความกระตือรือร้นออกมาชัดเจน",
+ "ฉันไม่ค่อยแสดงออกว่าตื่นเต้นหรือสนใจเวลาคุยกับคนอื่น",
+ "ฉันมักแสดงออกเวลากำลังสนใจใครอยู่",
+ "ฉันมักรอให้คนอื่นเริ่มบทสนทนาก่อน",
+ "เวลามีเรื่องที่ทำให้ฉันตื่นเต้น ฉันมักอยากเล่าให้คนที่ฉันสนิทฟัง",
+ "ฉันไม่ค่อยแสดงออกว่าชอบหรือไม่ชอบอะไร",
+ "ถ้าฉันรับปากอะไรกับใคร ฉันจะพยายามทำตามที่พูดไว้",
+ "เวลามีปัญหากับใคร ฉันมักปล่อยผ่านมากกว่าพยายามแก้",
+ "ฉันพยายามคุยและหาทางแก้เมื่อมีความขัดแย้ง",
+ "ฉันไม่ค่อยให้ความสำคัญกับการรักษาความสัมพันธ์ให้ต่อเนื่อง",
+ "ถ้าการกระทำของฉันกระทบความสัมพันธ์กับใคร ฉันพร้อมรับผิดชอบและแก้ไข",
+ "ถ้าความสัมพันธ์เริ่มมีปัญหา ฉันมักรู้สึกว่าไม่จำเป็นต้องพยายามรักษามัน"
+];
+const REVERSE=new Set([2,4,6,8,10,12,14,16,18]); // 1-based question numbers
+const LIKERT=["ไม่ตรงกับฉันเลย","ค่อนข้างไม่ตรงกับฉัน","ปานกลาง","ค่อนข้างตรงกับฉัน","ตรงกับฉันมากที่สุด"];
+
+const DIMS=[
+ {key:"conn",axis:"C",name:"Connection",full:"Relational Connection",from:0,hi:"C",lo:"B"},
+ {key:"drive",axis:"E",name:"Emotional Drive",full:"Emotional Drive",from:6,hi:"E",lo:"R"},
+ {key:"commit",axis:"S",name:"Commitment",full:"Relational Commitment",from:12,hi:"S",lo:"F"}
+];
+const TIEBREAK={
+ C:"โดยทั่วไป ฉันรู้สึกสบายใจกับการเปิดใจและรับฟังเรื่องส่วนตัวของคนใกล้ตัว",
+ E:"เวลาฉันรู้สึกตื่นเต้นหรือสนใจอะไร คนรอบตัวมักสังเกตได้",
+ S:"เมื่อความสัมพันธ์สำคัญกับฉัน ฉันมักพยายามแก้ปัญหาเพื่อรักษาความสัมพันธ์นั้นไว้"
+};
+const AXES={
+ C:{name:"Connected",th:"ให้ความสำคัญกับความเข้าใจ ความไว้ใจ และการเชื่อมโยงทางอารมณ์"},
+ B:{name:"Boundaried",th:"รักได้แต่ยังต้องการพื้นที่ส่วนตัว เลือกเปิดใจ และรักษาขอบเขตของตัวเอง"},
+ E:{name:"Expressive",th:"แสดงความรู้สึก ความสนใจ และความตื่นเต้นออกมาค่อนข้างชัด"},
+ R:{name:"Reserved",th:"รู้สึกลึกแต่ไม่จำเป็นต้องแสดงออกทั้งหมด ต้องใช้เวลาก่อนเปิดเผยความรู้สึก"},
+ S:{name:"Steady",th:"ให้ความสำคัญกับความมั่นคง การรักษาคำพูด และการแก้ปัญหาเพื่อรักษาความสัมพันธ์"},
+ F:{name:"Flexible",th:"ให้ความสำคัญกับความยืดหยุ่นและอิสระ พร้อมปรับระยะของความสัมพันธ์ตามสถานการณ์"}
+};
+
+const TYPES={
+CES:{en:"THE DEVOTED LOVER",th:"นักรักสายทุ่มเท",color:"#B23A5E",
+ def:"เป็นคนที่ต้องการทั้งความใกล้ชิด การแสดงความรัก และความมั่นคง เปิดใจ เข้าใจอีกฝ่าย และมักแสดงความรักออกมาอย่างชัดเจน เมื่อเกิดปัญหามักพยายามพูดคุยและรักษาความสัมพันธ์",
+ desc:["เมื่อรักใคร คุณมักเปิดใจ พยายามเข้าใจอีกฝ่าย และไม่ค่อยปล่อยให้คนที่คุณรักต้องเดาว่าคุณรู้สึกอย่างไร คุณชอบแบ่งปันทั้งเรื่องดี เรื่องไม่สบายใจ และเรื่องเล็ก ๆ ในชีวิตให้คนรักฟัง","คุณต้องการความรักที่ทั้งอบอุ่น ชัดเจน และมีอนาคตร่วมกัน"],
+ love:"คุณมักดูแล ใส่ใจ ถามไถ่ และต้องการให้อีกฝ่ายรู้ว่าเขามีความสำคัญ",
+ conflict:"คุณอยากคุยและแก้ไข เพราะการปล่อยให้ปัญหาค้างอยู่ทำให้คุณรู้สึกไม่สบายใจ",
+ strengths:["รักลึก","แสดงออกชัด","จริงจังกับความสัมพันธ์","ให้ความสำคัญกับความไว้ใจ","ต้องการสร้างความมั่นคงร่วมกัน"],
+ watch:"อาจทุ่มเทให้ความสัมพันธ์มากจนลืมดูแลความต้องการของตัวเอง"},
+CEF:{en:"THE FREEHEART LOVER",th:"นักรักสายอิสระ",color:"#D2622A",
+ def:"อบอุ่น เข้าถึงง่าย และแสดงความรู้สึกได้ดี แต่ยังต้องการพื้นที่และอิสระของตัวเอง ชอบความสัมพันธ์ที่ไม่กดดันและเปิดโอกาสให้ทั้งสองฝ่ายเติบโต",
+ desc:["คุณเชื่อมโยงกับคนรักได้ง่ายและแสดงความรู้สึกออกมาค่อนข้างชัด แต่ในขณะเดียวกันก็ต้องการอิสระและพื้นที่ของตัวเอง","คุณสามารถรักอย่างอบอุ่น สนุก และมีชีวิตชีวา โดยไม่จำเป็นต้องรีบกำหนดทุกอย่างในความสัมพันธ์ให้ชัดเจนตั้งแต่ต้น"],
+ love:"คุณชอบสร้างประสบการณ์ใหม่และแบ่งปันความสุขกับอีกฝ่าย",
+ conflict:"คุณอาจต้องการพื้นที่เพื่อคิดก่อนว่าจะเดินหน้าต่ออย่างไร",
+ strengths:["อบอุ่น","เป็นธรรมชาติ","โรแมนติก","รักอิสระ","ไม่ชอบความสัมพันธ์ที่กดดันมากเกินไป"],
+ watch:"บางครั้งอีกฝ่ายอาจไม่แน่ใจว่าคุณจริงจังกับความสัมพันธ์มากแค่ไหน หากคุณไม่ได้สื่อสารให้ชัด"},
+CRS:{en:"THE QUIET DEVOTEE",th:"นักรักสายดูแล",color:"#2F6F73",
+ def:"รักลึกแต่ไม่จำเป็นต้องแสดงออกมาก ให้ความสำคัญกับความไว้ใจและความมั่นคง มักแสดงความรักผ่านการกระทำมากกว่าคำพูด",
+ desc:["คุณรู้สึกกับความสัมพันธ์อย่างลึกซึ้ง แต่ไม่จำเป็นต้องแสดงออกตลอดเวลา","เมื่อคุณเปิดใจให้ใครแล้ว คนคนนั้นมักมีความสำคัญกับคุณมาก และความรักของคุณมักปรากฏผ่านการกระทำมากกว่าคำพูด"],
+ love:"คุณอาจไม่ได้บอกรักตลอดเวลา แต่จะจำรายละเอียด ช่วยเหลือ และอยู่ข้างคนรักเมื่อเขาต้องการ",
+ conflict:"คุณต้องการคิดให้รอบคอบก่อนพูด แต่โดยทั่วไปยังต้องการหาทางรักษาความสัมพันธ์",
+ strengths:["รักลึกแต่เงียบ","มั่นคง","รับฟัง","ไว้ใจได้","จริงจังเมื่อเปิดใจแล้ว"],
+ watch:"คนรักอาจไม่รู้ว่าคุณรักหรือคิดอะไรอยู่ หากคุณเก็บความรู้สึกมากเกินไป"},
+CRF:{en:"THE GENTLE DRIFTER",th:"นักรักค่อยเป็นค่อยไป",color:"#6B5BB5",
+ def:"เข้าใจความรู้สึกของคนอื่นและมีความอ่อนโยน แต่ต้องการพื้นที่ส่วนตัว ชอบให้ความสัมพันธ์ค่อย ๆ พัฒนาอย่างเป็นธรรมชาติ",
+ desc:["คุณเข้าใจความรู้สึกของคนอื่นได้ดี มีความอ่อนโยน และสร้างความใกล้ชิดได้ แต่ยังต้องการพื้นที่ส่วนตัวสูง","คุณไม่จำเป็นต้องแสดงความรักอย่างหวือหวา และไม่ต้องการให้ความสัมพันธ์กลายเป็นภาระหรือข้อผูกมัดที่หนักเกินไป"],
+ love:"คุณมักเป็นผู้ฟังที่ดีและเข้าใจความรู้สึกของอีกฝ่าย แม้จะไม่ได้แสดงออกมาก",
+ conflict:"คุณอาจถอยออกมาเพื่อทบทวนความรู้สึกก่อนตัดสินใจว่าจะเข้าไปแก้หรือปล่อยผ่าน",
+ strengths:["อ่อนโยน","เข้าใจคน","ไม่เร่งรีบ","รักแบบมีพื้นที่","ไม่ชอบการกดดัน"],
+ watch:"การถอยออกมาบ่อยเกินไปอาจทำให้อีกฝ่ายคิดว่าคุณไม่สนใจ"},
+BES:{en:"THE CHOSEN FLAME",th:"นักรักเลือกแล้วชัด",color:"#C0392B",
+ def:"ไม่ได้เปิดใจให้ทุกคนง่าย ๆ แต่ถ้าสนใจใครแล้วจะแสดงออกชัดและจริงจัง เมื่อเลือกความสัมพันธ์แล้วพร้อมดูแลและรักษามัน",
+ desc:["คุณไม่ได้สร้างความใกล้ชิดทางอารมณ์กับทุกคนง่าย ๆ แต่เมื่อคุณสนใจใคร คุณจะแสดงออกค่อนข้างชัดและจริงจังกับความสัมพันธ์นั้น","คุณเลือกคนที่จะเข้ามาอยู่ในพื้นที่ส่วนตัวค่อนข้างมาก แต่เมื่อยอมให้ใครเข้ามาแล้ว คุณพร้อมลงทุนกับความสัมพันธ์"],
+ love:"คุณสามารถเป็นฝ่ายเข้าหาหรือแสดงความสนใจอย่างชัดเจน แต่ต้องรู้สึกว่าอีกฝ่ายมีความหมายจริง ๆ",
+ conflict:"หากความสัมพันธ์นั้นสำคัญ คุณพร้อมแก้ไขและรับผิดชอบ",
+ strengths:["เลือกคน","ชัดเจน","มีพลัง","จริงจัง","ปกป้องคนที่ตัวเองรัก"],
+ watch:"ในช่วงแรก คนอื่นอาจมองว่าคุณเข้าถึงยากหรือเลือกมาก"},
+BEF:{en:"THE WILD HEART",th:"นักรักสายลุย",color:"#0F7FA8",
+ def:"มีพลัง แสดงความรู้สึกชัด และชอบความตื่นเต้น รักประสบการณ์ใหม่ ต้องการความสัมพันธ์ที่ไม่จำกัดอิสระมากเกินไป",
+ desc:["คุณรักด้วยพลังและความตื่นเต้นสูง สามารถแสดงความสนใจต่อคนที่ชอบได้ชัดเจน แต่ไม่ต้องการให้ความสัมพันธ์จำกัดอิสระของตัวเองมากเกินไป","คุณมักชอบความสัมพันธ์ที่มีความสดใหม่ มีประสบการณ์ร่วมกัน และเปิดพื้นที่ให้ทั้งสองฝ่ายเป็นตัวเอง"],
+ love:"คุณสร้างบรรยากาศที่ตื่นเต้นและทำให้อีกฝ่ายรู้สึกว่าความสัมพันธ์มีชีวิตชีวา",
+ conflict:"ถ้าความสัมพันธ์เริ่มรู้สึกหนักหรือควบคุมกันมากเกินไป คุณอาจเลือกถอยออกมา",
+ strengths:["เร่าร้อน","สนุก","กล้าแสดงออก","รักประสบการณ์ใหม่","ต้องการอิสระสูง"],
+ watch:"ความตื่นเต้นในช่วงแรกอาจทำให้ตัดสินใจเร็ว และเมื่อความรู้สึกใหม่ลดลง คุณอาจเริ่มตั้งคำถามกับความสัมพันธ์"},
+BRS:{en:"THE LOYAL GUARDIAN",th:"นักรักไว้ใจแล้วมั่นคง",color:"#4E6B2F",
+ def:"ค่อนข้างเป็นส่วนตัวและไม่เปิดใจง่าย แต่เมื่อเลือกใครแล้วจะจริงจัง ให้ความสำคัญกับความรับผิดชอบ ความมั่นคง และการรักษาคำพูด",
+ desc:["คุณค่อนข้างระมัดระวังกับการเปิดใจและไม่ใช่คนที่แสดงความรู้สึกมาก แต่เมื่อคุณตกลงสร้างความสัมพันธ์กับใคร คุณให้ความสำคัญกับความรับผิดชอบและความมั่นคงสูง","คุณอาจดูนิ่ง แต่ความรักของคุณแสดงผ่านความสม่ำเสมอและการอยู่ข้างกัน"],
+ love:"คุณมักแสดงความรักด้วยการทำสิ่งต่าง ๆ ให้มากกว่าพูดออกมาตรง ๆ",
+ conflict:"คุณอาจไม่ชอบพูดเรื่องอารมณ์มาก แต่ถ้าความสัมพันธ์สำคัญ คุณจะพยายามรับผิดชอบและแก้ไข",
+ strengths:["สุขุม","มั่นคง","รับผิดชอบ","ไม่เปิดใจง่าย","ให้คุณค่ากับความภักดี"],
+ watch:"การเก็บความรู้สึกไว้นานอาจทำให้อีกฝ่ายไม่รู้ว่ามีปัญหาเกิดขึ้น"},
+BRF:{en:"THE SOLO HEART",th:"นักรักสายเว้นระยะ",color:"#5A5F73",
+ def:"ต้องการพื้นที่ส่วนตัวสูง ไม่เปิดเผยความรู้สึกง่าย รักได้แต่ต้องการความสัมพันธ์ที่เคารพอิสระของกันและกัน",
+ desc:["คุณต้องการพื้นที่ส่วนตัวค่อนข้างมาก ไม่เปิดใจหรือแสดงความรู้สึกง่าย และต้องการความยืดหยุ่นในความสัมพันธ์","คุณสามารถรักใครได้จริง แต่ไม่ได้รู้สึกว่าความรักต้องหมายถึงการแชร์ทุกเรื่องหรืออยู่ด้วยกันตลอดเวลา คุณให้คุณค่ากับความเป็นอิสระและต้องการคนรักที่เข้าใจการมีพื้นที่ส่วนตัว"],
+ love:"คุณอาจต้องใช้เวลานานกว่าจะเปิดใจ และมักแสดงความรักในแบบที่เป็นส่วนตัวมาก",
+ conflict:"คุณมีแนวโน้มถอยออกมาคิดด้วยตัวเองก่อน และอาจเลือกปล่อยความสัมพันธ์หากรู้สึกว่าไม่เหมาะกัน",
+ strengths:["เป็นส่วนตัว","รักอิสระ","ไม่ชอบความกดดัน","แสดงออกน้อย","ให้ความสำคัญกับพื้นที่ของตัวเอง"],
+ watch:"อีกฝ่ายอาจตีความความต้องการพื้นที่ส่วนตัวว่าเป็นความเย็นชาหรือไม่สนใจ"}
+};
+const ORDER=["CES","CEF","CRS","CRF","BES","BEF","BRS","BRF"];
+
+/* ------------------------------------------------------------ CHARACTERS
+   Shared art direction: flat vector half-body, round head, dark-plum ink features,
+   soft tinted backdrop. Each type differs in pose, expression, outfit and accessory.
+   Characters are intentionally gender-neutral. */
+const INK="#2A2140";
+const bg=c=>`<circle cx="120" cy="132" r="110" fill="${c}" opacity=".16"/><circle cx="120" cy="132" r="84" fill="${c}" opacity=".14"/>`;
+const neck=s=>`<rect x="106" y="160" width="28" height="40" rx="12" fill="${s}"/>`;
+const head=s=>`<ellipse cx="74" cy="122" rx="6" ry="9" fill="${s}"/><ellipse cx="166" cy="122" rx="6" ry="9" fill="${s}"/><ellipse cx="120" cy="118" rx="46" ry="50" fill="${s}"/>`;
+const eyesOpen=(y=120)=>`<circle cx="104" cy="${y}" r="5" fill="${INK}"/><circle cx="136" cy="${y}" r="5" fill="${INK}"/><circle cx="105.6" cy="${y-1.6}" r="1.7" fill="#fff"/><circle cx="137.6" cy="${y-1.6}" r="1.7" fill="#fff"/>`;
+const eyesHappy=`<path d="M97 122Q104 112 111 122M129 122Q136 112 143 122" stroke="${INK}" stroke-width="3.6" fill="none" stroke-linecap="round"/>`;
+const eyesRelaxed=`<path d="M97 118Q104 127 111 118M129 118Q136 127 143 118" stroke="${INK}" stroke-width="3.6" fill="none" stroke-linecap="round"/>`;
+const eyesHalf=`<circle cx="104" cy="123" r="4.2" fill="${INK}"/><circle cx="136" cy="123" r="4.2" fill="${INK}"/><path d="M96.5 118.5H111.5M128.5 118.5H143.5" stroke="${INK}" stroke-width="3.6" stroke-linecap="round"/>`;
+const cheeks=`<circle cx="91" cy="137" r="7" fill="#F08A8A" opacity=".35"/><circle cx="149" cy="137" r="7" fill="#F08A8A" opacity=".35"/>`;
+const smile=`<path d="M108 140Q120 151 132 140" stroke="${INK}" stroke-width="3.6" fill="none" stroke-linecap="round"/>`;
+const tinySmile=`<path d="M113 142Q120 147 127 142" stroke="${INK}" stroke-width="3.4" fill="none" stroke-linecap="round"/>`;
+const grin=`<path d="M103 136Q120 160 137 136Z" fill="#7A2038" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/><path d="M110 148Q120 154 130 148Q120 144 110 148Z" fill="#F07A8A"/>`;
+const smirk=`<path d="M108 144Q122 148 134 137" stroke="${INK}" stroke-width="3.6" fill="none" stroke-linecap="round"/>`;
+const flat=`<path d="M110 143H130" stroke="${INK}" stroke-width="3.6" stroke-linecap="round"/>`;
+const star=(x,y,s,c)=>`<path d="M${x} ${y-s}L${x+s*.3} ${y-s*.3}L${x+s} ${y}L${x+s*.3} ${y+s*.3}L${x} ${y+s}L${x-s*.3} ${y+s*.3}L${x-s} ${y}L${x-s*.3} ${y-s*.3}Z" fill="${c}"/>`;
+const arm=(d,c)=>`<path d="${d}" stroke="${c}" stroke-width="22" stroke-linecap="round" fill="none"/>`;
+const hand=(x,y,s,r=10)=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${s}"/>`;
+const svg=inner=>`<svg viewBox="0 0 240 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">${inner}</svg>`;
+
+const CHARS={
+CES(){const s="#F1C7A0",h="#5B3A29",o="#B23A5E";
+ return svg(bg(o)
+ +`<path d="M40 260Q40 198 120 192Q200 198 200 260Z" fill="${o}"/>`+neck(s)
+ +`<path d="M98 194Q120 214 142 194L134 189Q120 204 106 189Z" fill="#8F2B49"/>`+head(s)
+ +`<path d="M72 118Q64 60 120 58Q176 60 168 118Q160 88 132 80Q104 92 72 118Z" fill="${h}"/>`
+ +eyesHappy+cheeks+smile
+ +arm("M54 258Q50 226 94 226",o)+arm("M186 258Q190 226 146 226",o)
+ +`<path d="M120 248C86 224 92 198 111 201C117 203 120 210 120 210C120 210 123 203 129 201C148 198 154 224 120 248Z" fill="#FF8FA8" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>`
+ +hand(97,228,s)+hand(143,228,s)
+ +star(44,92,7,"#FFC2CF")+star(200,86,5,"#FFC2CF"));},
+CEF(){const s="#D9A066",h="#2E2A4A",o="#E07A3F";
+ return svg(bg("#D2622A")
+ +`<path d="M68 112Q56 196 88 206L152 206Q184 196 172 112Q170 60 120 58Q70 60 68 112Z" fill="${h}"/>`
+ +`<path d="M40 260Q40 198 120 192Q200 198 200 260Z" fill="${o}"/>`+neck(s)+head(s)
+ +`<path d="M76 108Q84 74 120 72Q156 74 164 108Q142 88 120 90Q98 88 76 108Z" fill="${h}"/>`
+ +`<path d="M90 192Q120 214 150 192L154 206Q120 230 86 206Z" fill="#F4C542"/>`
+ +eyesHappy+cheeks+grin
+ +`<g transform="translate(82 96)"><circle cx="0" cy="-8" r="6" fill="#FF9EB5"/><circle cx="8" cy="-2" r="6" fill="#FF9EB5"/><circle cx="5" cy="7" r="6" fill="#FF9EB5"/><circle cx="-5" cy="7" r="6" fill="#FF9EB5"/><circle cx="-8" cy="-2" r="6" fill="#FF9EB5"/><circle cx="0" cy="0" r="4.5" fill="#F4C542"/></g>`
+ +arm("M190 254Q208 214 206 178",o)+hand(206,168,s,11)
+ +`<path d="M22 70Q34 56 46 70Q58 56 70 70" stroke="${INK}" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`
+ +star(200,60,6,"#F4C542"));},
+CRS(){const s="#B9805A",h="#241B2F",o="#2F6F73";
+ return svg(bg(o)
+ +`<circle cx="120" cy="56" r="17" fill="${h}"/>`
+ +`<path d="M40 260Q40 198 120 192Q200 198 200 260Z" fill="${o}"/>`
+ +`<path d="M102 192L120 260L138 192Z" fill="#F6ECD9"/>`+neck(s)+head(s)
+ +`<path d="M74 116Q70 64 120 62Q170 64 166 116Q156 88 120 86Q84 88 74 116Z" fill="${h}"/>`
+ +`<g fill="none" stroke="#3A2E4F" stroke-width="3"><circle cx="104" cy="121" r="13"/><circle cx="136" cy="121" r="13"/><path d="M117 120H123"/></g>`
+ +eyesOpen(121)+tinySmile
+ +arm("M54 258Q48 234 96 236",o)+arm("M186 258Q192 234 144 236",o)
+ +`<rect x="104" y="212" width="32" height="28" rx="7" fill="#FFF7EA" stroke="${o}" stroke-width="3"/><path d="M136 220Q150 220 150 229T136 238" stroke="${o}" stroke-width="3" fill="none"/>`
+ +hand(100,238,s,9)+hand(140,238,s,9)
+ +`<path d="M113 204Q107 196 113 188M127 204Q121 196 127 188" stroke="${o}" stroke-width="3" fill="none" opacity=".55" stroke-linecap="round"/>`);},
+CRF(){const s="#F3D0B0",h="#4A3F7A",o="#6B5BB5";
+ return svg(bg(o)
+ +`<path d="M66 116Q58 184 92 186L148 186Q182 184 174 116Q172 62 120 60Q68 62 66 116Z" fill="${h}"/>`
+ +`<path d="M40 260Q40 198 120 192Q200 198 200 260Z" fill="${o}"/>`+neck(s)
+ +`<path d="M80 196Q120 172 160 196L164 216Q120 234 76 216Z" fill="#5548A0"/><path d="M111 214V238M129 214V238" stroke="#F4EEFF" stroke-width="3" stroke-linecap="round"/>`
+ +head(s)
+ +`<path d="M74 112Q80 72 122 70Q160 72 166 112Q150 86 118 92Q92 96 74 112Z" fill="${h}"/>`
+ +`<path d="M72 112Q72 60 120 58Q168 60 168 112" fill="none" stroke="${INK}" stroke-width="7" stroke-linecap="round"/><rect x="62" y="108" width="17" height="32" rx="8" fill="${INK}"/><rect x="161" y="108" width="17" height="32" rx="8" fill="${INK}"/>`
+ +eyesRelaxed+cheeks+tinySmile
+ +arm("M188 256Q206 198 158 178",o)+hand(154,174,s)
+ +`<path d="M198 50a16 16 0 1 0 12 26a13 13 0 0 1-12-26z" fill="#F4E3A1"/>`
+ +`<circle cx="36" cy="80" r="3.5" fill="#CFC4F2"/><circle cx="48" cy="60" r="2.5" fill="#CFC4F2"/><circle cx="26" cy="104" r="2.5" fill="#CFC4F2"/>`);},
+BES(){const s="#C68E63",h="#1E1B26",o="#C0392B";
+ return svg(bg(o)
+ +`<path d="M40 260Q40 198 120 192Q200 198 200 260Z" fill="${o}"/>`
+ +`<path d="M102 192L120 240L138 192Z" fill="#FFF3EC"/>`+neck(s)
+ +`<path d="M98 190L120 242L102 248Z M142 190L120 242L138 248Z" fill="#9C2B20"/>`
+ +head(s)
+ +`<path d="M72 114Q64 60 122 58Q178 60 168 112Q162 82 130 82Q100 80 92 98Q84 104 72 114Z" fill="${h}"/>`
+ +`<path d="M95 107L112 112M145 107L128 112" stroke="${h}" stroke-width="4.5" stroke-linecap="round"/>`
+ +eyesOpen(121)+smirk+`<circle cx="70" cy="136" r="4" fill="#E9B949"/>`
+ +arm("M188 256Q198 226 152 228",o)+hand(148,228,s)
+ +arm("M52 256Q42 230 66 214",o)+hand(66,210,s)
+ +`<path d="M66 198C50 186 58 170 66 158C68 172 84 178 76 194C74 199 70 201 66 198Z" fill="#FF8A3D"/><path d="M66 197C59 191 63 184 66 179C68 186 73 188 71 194Z" fill="#FFD166"/>`);},
+BEF(){const s="#8D5A3B",h="#1C1420",o="#0F7FA8";
+ return svg(bg(o)
+ +`<ellipse cx="120" cy="88" rx="56" ry="42" fill="${h}"/><circle cx="84" cy="80" r="20" fill="${h}"/><circle cx="106" cy="62" r="22" fill="${h}"/><circle cx="134" cy="62" r="22" fill="${h}"/><circle cx="158" cy="80" r="20" fill="${h}"/><circle cx="72" cy="104" r="16" fill="${h}"/><circle cx="168" cy="104" r="16" fill="${h}"/>`
+ +`<path d="M40 260Q40 198 120 192Q200 198 200 260Z" fill="${o}"/>`
+ +`<path d="M120 194V260" stroke="#D9F1FA" stroke-width="3"/><path d="M84 200L76 260M156 200L164 260" stroke="#F4C542" stroke-width="10" stroke-linecap="round"/>`
+ +neck(s)+head(s)
+ +`<path d="M74 104Q84 76 120 74Q156 76 166 104Q142 90 120 90Q98 90 74 104Z" fill="${h}"/>`
+ +`<path d="M76 100Q120 82 164 100" stroke="#F4C542" stroke-width="8" fill="none" stroke-linecap="round"/>`
+ +eyesHappy+`<circle cx="91" cy="137" r="7" fill="#F08A8A" opacity=".3"/><circle cx="149" cy="137" r="7" fill="#F08A8A" opacity=".3"/>`+grin
+ +arm("M50 254Q32 214 44 180",o)+hand(44,168,s,12)
+ +star(200,74,10,"#F4C542")+star(30,118,6,"#F4C542")+star(212,120,4,"#8FD3EA"));},
+BRS(){const s="#E8B98F",h="#3A3540",o="#4E6B2F";
+ return svg(bg(o)
+ +`<path d="M40 260Q40 198 120 192Q200 198 200 260Z" fill="${o}"/>`+neck(s)
+ +`<path d="M98 192L120 216L142 192L136 187L120 204L104 187Z" fill="#EFEAD6"/>`
+ +head(s)
+ +`<path d="M74 114Q68 62 120 60Q172 62 166 114Q160 86 132 80Q100 76 74 114Z" fill="${h}"/>`
+ +`<path d="M96 108H112M128 108H144" stroke="${h}" stroke-width="4.5" stroke-linecap="round"/>`
+ +eyesOpen(121)+flat
+ +`<path d="M84 198h16v9q0 8-8 12q-8-4-8-12z" fill="#E9B949" stroke="#B98A1E" stroke-width="1.5"/>`
+ +`<rect x="54" y="222" width="132" height="26" rx="13" fill="#3E5625"/>`
+ +`<path d="M62 242L178 226" stroke="${o}" stroke-width="20" stroke-linecap="round"/>`
+ +hand(176,226,s,9)+hand(64,240,s,9));},
+BRF(){const s="#E2B48E",o="#5A5F73";
+ return svg(bg(o)
+ +`<path d="M60 124Q58 52 120 50Q182 52 180 124L182 176Q120 196 58 176Z" fill="${o}"/><ellipse cx="120" cy="120" rx="53" ry="56" fill="#3F4356"/>`
+ +`<path d="M40 260Q40 198 120 192Q200 198 200 260Z" fill="${o}"/>`+neck(s)
+ +`<path d="M64 192Q120 214 176 192L180 212Q120 236 60 212Z" fill="#474B5E"/>`
+ +head(s)
+ +`<path d="M68 108Q72 68 120 64Q168 68 172 108" stroke="${o}" stroke-width="11" fill="none" stroke-linecap="round"/>`
+ +eyesHalf+flat
+ +`<circle cx="74" cy="128" r="4" fill="#fff"/><circle cx="166" cy="128" r="4" fill="#fff"/><path d="M74 132Q68 172 96 198M166 132Q172 172 144 198" stroke="#fff" stroke-width="2" fill="none"/>`
+ +`<path d="M78 238Q120 222 162 238L154 260H86Z" fill="#474B5E"/>`
+ +`<circle cx="204" cy="60" r="12" fill="#C9B8FF"/><ellipse cx="204" cy="60" rx="20" ry="5" fill="none" stroke="#8C7AD9" stroke-width="2.5" transform="rotate(-20 204 60)"/>`
+ +`<circle cx="36" cy="86" r="3" fill="#B9BDCF"/><circle cx="52" cy="62" r="2.4" fill="#B9BDCF"/>`);}
+};
+
+/* ---------------------------------------------------------------- STATE */
+const KEY={cur:"lpt_currentQuestion",ans:"lpt_answers",tie:"lpt_tieBreakAnswers",res:"lpt_result"};
+const store={
+ get(k,def){try{const v=localStorage.getItem(k);return v===null?def:JSON.parse(v)}catch(e){return def}},
+ set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}},
+ del(k){try{localStorage.removeItem(k)}catch(e){}}
+};
+const SCALE=[
+ {v:5,t:"ตรงกับฉันมากที่สุด",l:"ตรงกับฉัน<br>มากที่สุด",side:"agree",sz:"xl"},
+ {v:4,t:"ค่อนข้างตรงกับฉัน",l:"ค่อนข้าง<br>ตรงกับฉัน",side:"agree",sz:"l"},
+ {v:3,t:"ปานกลาง",l:"ปานกลาง",side:"neutral",sz:"m"},
+ {v:2,t:"ค่อนข้างไม่ตรงกับฉัน",l:"ค่อนข้าง<br>ไม่ตรงกับฉัน",side:"disagree",sz:"l"},
+ {v:1,t:"ไม่ตรงกับฉันเลย",l:"ไม่ตรงกับ<br>ฉันเลย",side:"disagree",sz:"xl"}
+];
+const MARK=size=>`<svg class="mark" width="${size}" height="${size}" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+ <circle cx="32" cy="32" r="28" fill="none" stroke="var(--primary)" stroke-width="4"/>
+ <circle cx="32" cy="32" r="21" fill="var(--tint)"/>
+ <path d="M32 46C18 37 21 24 28.5 25C31 25.4 32 28.5 32 28.5C32 28.5 33 25.4 35.5 25C43 24 46 37 32 46Z" fill="var(--primary)"/>
+ <circle cx="32" cy="4" r="3.2" fill="var(--accent)"/>
+</svg>`;
+const WORDMARK=`<span class="wm">L<i>O</i>V<i>E</i></span>`;
+
+const app=document.getElementById("app"),topEl=document.getElementById("top");
+document.getElementById("topmark").innerHTML=MARK(30);
+let state={screen:"intro",idx:0,answers:Array(18).fill(null),tie:{},result:null,tieAxes:[]};
+let advanceTimer=null;
+
+const allAnswered=()=>state.answers.every(v=>v!==null);
+const scored=i=>REVERSE.has(i+1)?6-state.answers[i]:state.answers[i];
+const dimScore=d=>{let s=0;for(let i=d.from;i<d.from+6;i++)s+=scored(i);return s};
+const computeTieAxes=()=>allAnswered()?DIMS.filter(d=>dimScore(d)===18).map(d=>d.axis):[];
+function letterFor(d){
+ const sc=dimScore(d);
+ if(sc>=19)return d.hi;
+ if(sc<=17)return d.lo;
+ const t=state.tie[d.axis];
+ if(t>=4)return d.hi;
+ if(t<=2)return d.lo;
+ // tie-break answered 3: compare positive items (1st,3rd,5th) vs reverse items (2nd,4th,6th) after scoring
+ let pos=0,rev=0;
+ for(let k=0;k<6;k++){const v=scored(d.from+k);if(k%2===0)pos+=v;else rev+=v}
+ return pos>=rev?d.hi:d.lo;
+}
+function getItems(){
+ const items=QUESTIONS.map((q,i)=>({type:"q",i,q}));
+ state.tieAxes.forEach(a=>items.push({type:"tb",axis:a}));
+ return items;
+}
+const isAnswered=it=>it.type==="q"?state.answers[it.i]!==null:state.tie[it.axis]!=null;
+
+function loadState(){
+ const a=store.get(KEY.ans,null);
+ if(Array.isArray(a)&&a.length===18)state.answers=a.map(v=>Number.isInteger(v)&&v>=1&&v<=5?v:null);
+ const t=store.get(KEY.tie,{});if(t&&typeof t==="object"&&!Array.isArray(t))state.tie=t;
+ state.tieAxes=computeTieAxes();
+ const c=store.get(KEY.cur,0);state.idx=Number.isInteger(c)&&c>=0?c:0;
+ state.idx=Math.min(state.idx,getItems().length-1);
+ const r=store.get(KEY.res,null);
+ if(r&&TYPES[r.code]&&r.scores)state.result=r;
+ state.screen=state.result?"result":"intro";
+}
+function saveState(){
+ store.set(KEY.ans,state.answers);store.set(KEY.tie,state.tie);store.set(KEY.cur,state.idx);
+ if(state.result)store.set(KEY.res,state.result);else store.del(KEY.res);
+}
+function resetState(){
+ clearTimeout(advanceTimer);
+ state={screen:"intro",idx:0,answers:Array(18).fill(null),tie:{},result:null,tieAxes:[]};
+ Object.values(KEY).forEach(store.del);
+}
+
+/* ------------------------------------------------------------------ UI */
+function focusHeading(){
+ const el=app.querySelector("[data-focus]");
+ if(el){el.setAttribute("tabindex","-1");el.focus({preventScroll:true})}
+}
+function setHeader(show){topEl.hidden=!show}
+function toast(msg){
+ const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");
+ clearTimeout(toast._t);toast._t=setTimeout(()=>t.classList.remove("show"),2400);
+}
+
+function primaryButtons(){
+ const answered=state.answers.filter(v=>v!==null).length;
+ if(state.result)return `<button class="btn btn-primary btn-block" data-action="viewResult">ดูผลลัพธ์ของคุณ</button><button class="btn btn-ghost btn-block" data-action="restart">ทำแบบทดสอบใหม่</button>`;
+ if(answered>0)return `<button class="btn btn-primary btn-block" data-action="start">ทำต่อจากข้อ ${Math.min(state.idx+1,getItems().length)}</button><button class="btn btn-ghost btn-block" data-action="restart">เริ่มใหม่</button>`;
+ return `<button class="btn btn-primary btn-block" data-action="start">เริ่มทำแบบทดสอบ</button>`;
+}
+
+function galleryHTML(){
+ const cards=ORDER.map((code,i)=>{
+  const t=TYPES[code];
+  return `
+  <article class="card type-card" style="--a:${t.color}" aria-labelledby="tc-${code}">
+   <div class="illus">${CHARS[code]()}</div>
+   <div class="body">
+    <div class="tc-top"><span class="tc-no">${i+1} / 8</span><span class="tc-code" aria-hidden="true">${code.split("").map(l=>`<span>${l}</span>`).join("")}</span></div>
+    <h3 id="tc-${code}"><span class="sr-only">${code} </span>${t.en}</h3>
+    <div class="th">${t.th}</div>
+    <p class="d">${t.def}</p>
+    <h4>จุดเด่นในความสัมพันธ์</h4>
+    <ul class="chips">${t.strengths.map(x=>`<li>${x}</li>`).join("")}</ul>
+    <h4>สิ่งที่ควรระวัง</h4>
+    <p class="d" style="margin-top:0">${t.watch}</p>
+   </div>
+  </article>`}).join("");
+ return `
+ <section class="gallery" id="types" aria-labelledby="gt">
+  <div class="gallery-head"><h2 id="gt">ทำความรู้จักบุคลิกภาพความรักทั้ง 8 แบบ</h2><p>ดูตัวละครแต่ละแบบ พร้อมจุดเด่นและสิ่งที่ควรระวังในความสัมพันธ์</p></div>
+  ${cards}
+  <p class="gallery-note">บุคลิกภาพทั้ง 8 แบบไม่ได้แบ่งว่าแบบใดดีกว่าหรือแย่กว่า แต่สะท้อนรูปแบบที่มีแนวโน้มใช้ในการสร้างความใกล้ชิด แสดงความรู้สึก และรักษาความสัมพันธ์</p>
+  <div class="card end-cta stack-btns"><p style="margin:0 0 14px;font-weight:600">พร้อมค้นหาว่าคุณรักแบบไหนแล้วหรือยัง?</p>${primaryButtons()}</div>
+ </section>`;
+}
+
+function renderIntro(){
+ setHeader(false);
+ app.innerHTML=`
+ <section class="card intro enter" aria-labelledby="t">
+  <div class="hero-logo">${MARK(84)}<h1 id="t" data-focus>${WORDMARK}<span class="sub">Personality Test</span></h1></div>
+  <p class="tagline">Find Your Love Style, Understand How You Connect</p>
+  <p class="th-name">แบบทดสอบบุคลิกภาพด้านความรักและความสัมพันธ์</p>
+  <p class="purpose">ค้นหารูปแบบความรักของคุณผ่าน 18 คำถาม และทำความรู้จักวิธีที่คุณเชื่อมโยง แสดงความรู้สึก และรักษาความสัมพันธ์</p>
+  <p class="note">แบบทดสอบนี้ใช้เพื่อสำรวจแนวโน้มด้านความรักและความสัมพันธ์ ไม่ใช่เครื่องมือวินิจฉัยทางจิตวิทยา ผลลัพธ์ไม่ควรใช้เพื่อตัดสินคุณค่าของบุคคลหรือความเหมาะสมของความสัมพันธ์เพียงอย่างเดียว</p>
+  <div class="start stack-btns">${primaryButtons()}
+   <button class="btn btn-ghost btn-block" data-action="scrollTypes">ดูบุคลิกภาพทั้ง 8 แบบ</button></div>
+  <p class="note" style="border-style:solid">คำตอบของคุณจะถูกประมวลผลบนอุปกรณ์นี้ และจะไม่ถูกส่งไปยังเซิร์ฟเวอร์</p>
+ </section>
+ ${galleryHTML()}`;
+ focusHeading();
+}
+
+function likertHTML(cur,labelledBy){
+ return `<div class="likert" role="radiogroup" aria-labelledby="${labelledBy}">
+  <div class="likert-row likert-labels" aria-hidden="true">${SCALE.map(o=>`<span class="ll ${o.side}">${o.l}</span>`).join("")}</div>
+  <div class="likert-row">${SCALE.map(o=>`<div class="cell"><button class="dot ${o.side} ${o.sz}" role="radio" aria-checked="${cur===o.v}" aria-label="${o.t} (${o.v} คะแนน)" data-action="answer" data-value="${o.v}"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="5,12.5 10,17.5 19,7"/></svg></button></div>`).join("")}</div>
+ </div>`;
+}
+
+function renderQuiz(anim){
+ setHeader(true);
+ const items=getItems();
+ state.idx=Math.max(0,Math.min(state.idx,items.length-1));
+ const item=items[state.idx],total=items.length,answered=isAnswered(item);
+ const isLast=state.idx===total-1&&answered;
+ const pct=Math.round(((state.idx+(answered?1:0))/total)*100);
+ let label,body;
+ if(item.type==="q"){
+  label=`คำถามที่ ${state.idx+1} จาก 18`;
+  body=`<p class="q-kicker">ข้อความนี้ตรงกับคุณมากน้อยแค่ไหน?</p><h2 class="q-text" id="qt" data-focus>${item.q}</h2>${likertHTML(state.answers[item.i],"qt")}`;
+ }else{
+  label=`คำถามเพิ่มเติม ${state.idx-17} จาก ${state.tieAxes.length}`;
+  body=`<p class="q-kicker">คะแนนของแกนนี้เท่ากัน ตอบอีกข้อเพื่อตัดสิน</p><h2 class="q-text" id="qt" data-focus>${TIEBREAK[item.axis]}</h2>${likertHTML(state.tie[item.axis],"qt")}`;
+ }
+ app.innerHTML=`
+ <section aria-label="แบบทดสอบ">
+  <h1 class="page-title">ค้นหารูปแบบความรักของคุณ</h1>
+  <div class="progress-meta"><span>${label}</span><span>${pct}%</span></div>
+  <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}" aria-label="ความคืบหน้า"><i style="width:${pct}%"></i></div>
+  <div class="card q-card ${anim==="back"?"enter-back":anim?"enter":""}">${body}</div>
+  <div class="nav">
+   <button class="btn btn-ghost" data-action="back" ${state.idx===0?"disabled":""}>ย้อนกลับ</button>
+   <button class="btn btn-primary" data-action="next" ${answered?"":"disabled"}>${isLast?"ดูผลลัพธ์":"ถัดไป"}</button>
+  </div>
+ </section>`;
+ if(anim)focusHeading();
+}
+
+function renderProcessing(){
+ setHeader(true);
+ app.innerHTML=`<section class="card processing enter" aria-live="polite"><div class="spinner" aria-hidden="true"></div><h2 data-focus>กำลังวิเคราะห์รูปแบบความรักของคุณ…</h2><p class="lead">รอสักครู่ ผลลัพธ์กำลังจะแสดง</p></section>`;
+ focusHeading();window.scrollTo({top:0});
+}
+
+function renderResult(){
+ setHeader(true);
+ const r=state.result,t=TYPES[r.code],letters=r.code.split("");
+ const pairs=DIMS.map((d,i)=>{
+  const sc=r.scores[d.key],hi=d.hi,lo=d.lo,pole=letters[i];
+  const tied=sc===18;
+  return `<div class="pair">
+   <div class="pair-title"><span>${d.name}</span><span>${sc} / 30</span></div>
+   <div class="pair-head"><span>${hi} – ${AXES[hi].name}</span><span class="r">${AXES[lo].name} – ${lo}</span></div>
+   <div class="pair-bar" role="img" aria-label="${d.full} ${sc} จาก 30 คะแนน ผลคือ ${pole}"><i data-w="${(sc/36)*100}" style="width:0"></i></div>
+   ${tied?`<div class="pair-note">คะแนนเท่ากัน จึงตัดสินด้วยคำถามเพิ่มเติม (ผลคือ ${pole})</div>`:""}
+  </div>`}).join("");
+ app.innerHTML=`
+ <section class="card enter" style="padding:0;overflow:hidden;--a:${t.color}" aria-labelledby="rt">
+  <div class="result-hero">
+   <p class="q-kicker" style="margin:0 0 14px">ผลบุคลิกภาพความรักของคุณ<br><small>YOUR LOVE TYPE</small></p>
+   <div class="type-illus">${CHARS[r.code]()}</div>
+   <div class="letters" aria-hidden="true">${letters.map(l=>`<span>${l}</span>`).join("")}</div>
+   <h1 class="type-en" id="rt" data-focus><span class="sr-only">${r.code} </span>${t.en}</h1>
+   <div class="type-th">${t.th}</div>
+   <p class="type-desc">${t.def}</p>
+  </div>
+  <div style="padding:6px 22px 26px">
+   <div class="section">
+    <h2>คะแนนของแต่ละแกน</h2>
+    <p class="mini-note">คะแนนแต่ละแกนอยู่ระหว่าง 6–30 (19–30 ได้ตัวอักษรแรก, 6–17 ได้ตัวอักษรหลัง)</p>
+    ${pairs}
+   </div>
+   <div class="section info-grid">
+    <div class="info full"><h3>คุณรักแบบไหน</h3>${t.desc.map(p=>`<p>${p}</p>`).join("")}</div>
+    <div class="info"><h3>เมื่อมีความรัก</h3><p>${t.love}</p></div>
+    <div class="info"><h3>เมื่อเกิดความขัดแย้ง</h3><p>${t.conflict}</p></div>
+    <div class="info"><h3>จุดเด่นในความสัมพันธ์</h3><ul class="chips" style="margin-top:8px">${t.strengths.map(x=>`<li style="border-color:var(--a)">${x}</li>`).join("")}</ul></div>
+    <div class="info"><h3>สิ่งที่ควรระวัง</h3><p>${t.watch}</p></div>
+    <div class="info full"><h3>ความหมายของตัวอักษร</h3><div class="letter-list" style="margin-top:10px">
+     ${letters.map(l=>`<div class="letter"><div class="l">${l}</div><div><b>${AXES[l].name}</b><span>${AXES[l].th}</span></div></div>`).join("")}</div></div>
+   </div>
+   <div class="actions">
+    <button class="btn btn-primary wide" data-action="restart">ทำแบบทดสอบอีกครั้ง</button>
+    <button class="btn btn-ghost" data-action="copy">คัดลอกผลลัพธ์</button>
+    <button class="btn btn-ghost" data-action="download">ดาวน์โหลดผลลัพธ์เป็นภาพ</button>
+    <button class="btn btn-ghost" data-action="share">แชร์ผลลัพธ์</button>
+    <button class="btn btn-ghost" data-action="print">พิมพ์ / บันทึกเป็น PDF</button>
+   </div>
+   <p class="disclaimer">แบบทดสอบนี้ใช้เพื่อสำรวจแนวโน้มด้านความรักและความสัมพันธ์ ไม่ใช่เครื่องมือวินิจฉัยทางจิตวิทยา ผลลัพธ์ไม่ควรใช้เพื่อตัดสินคุณค่าของบุคคลหรือความเหมาะสมของความสัมพันธ์เพียงอย่างเดียว</p>
+   <p class="disclaimer">คำตอบของคุณจะถูกประมวลผลบนอุปกรณ์นี้ และจะไม่ถูกส่งไปยังเซิร์ฟเวอร์</p>
+  </div>
+ </section>`;
+ requestAnimationFrame(()=>requestAnimationFrame(()=>app.querySelectorAll(".pair-bar i").forEach(i=>i.style.width=i.dataset.w+"%")));
+ focusHeading();window.scrollTo({top:0});
+}
+
+function render(anim){
+ if(state.screen==="intro")renderIntro();
+ else if(state.screen==="quiz")renderQuiz(anim);
+ else renderResult();
+}
+
+/* -------------------------------------------------------------- ACTIONS */
+function finish(){
+ const scores={};DIMS.forEach(d=>scores[d.key]=dimScore(d));
+ state.result={code:DIMS.map(letterFor).join(""),scores};
+ state.screen="result";saveState();
+ renderProcessing();
+ setTimeout(()=>{if(state.screen==="result")renderResult()},1800);
+}
+function summaryText(){
+ const r=state.result,t=TYPES[r.code];
+ return `ผล Love Personality Test ของฉันคือ ${r.code} · ${t.en} (${t.th})\nConnection ${r.scores.conn}/30 · Emotional Drive ${r.scores.drive}/30 · Commitment ${r.scores.commit}/30\n${location.href.split("#")[0]}`;
+}
+async function copyText(txt){
+ try{await navigator.clipboard.writeText(txt);return true}catch(e){
+  try{const ta=document.createElement("textarea");ta.value=txt;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();const ok=document.execCommand("copy");ta.remove();return ok}catch(e2){return false}
+ }
+}
+function roundRect(g,x,y,w,h,r){g.beginPath();g.moveTo(x+r,y);g.arcTo(x+w,y,x+w,y+h,r);g.arcTo(x+w,y+h,x,y+h,r);g.arcTo(x,y+h,x,y,r);g.arcTo(x,y,x+w,y,r);g.closePath()}
+function downloadImage(){
+ const r=state.result,t=TYPES[r.code],W=1080,H=1500;
+ const c=document.createElement("canvas");c.width=W;c.height=H;const g=c.getContext("2d");
+ const font=(w,s)=>`${w} ${s}px "Noto Sans Thai",system-ui,sans-serif`;
+ g.fillStyle="#FBF5EC";g.fillRect(0,0,W,H);
+ g.fillStyle=t.color;g.globalAlpha=.13;g.fillRect(0,0,W,800);g.globalAlpha=1;
+ g.textAlign="center";g.fillStyle="#75666A";g.font=font(600,30);g.fillText("YOUR LOVE TYPE",W/2,80);
+ const finishDraw=()=>{
+  const bw=150,bh=180,gap=18,x0=(W-(bw*3+gap*2))/2,y0=800;
+  r.code.split("").forEach((l,i)=>{
+   const x=x0+i*(bw+gap);roundRect(g,x,y0,bw,bh,30);
+   if(i%2===0){g.fillStyle=t.color;g.fill();g.fillStyle="#fff"}else{g.fillStyle="#FFFCF7";g.fill();g.lineWidth=5;g.strokeStyle=t.color;g.stroke();g.fillStyle="#33252B"}
+   g.font=font(800,110);g.fillText(l,x+bw/2,y0+bh/2+38);
+  });
+  g.fillStyle="#33252B";g.font=font(800,52);g.fillText(t.en,W/2,1060);
+  g.fillStyle="#7A5BB0";g.font=font(600,40);g.fillText(t.th,W/2,1120);
+  DIMS.forEach((d,i)=>{
+   const y=1190+i*70,sc=r.scores[d.key];
+   g.textAlign="left";g.fillStyle="#33252B";g.font=font(600,30);g.fillText(d.name,120,y);
+   g.textAlign="right";g.fillText(`${sc} / 30`,W-120,y);
+   roundRect(g,120,y+14,W-240,16,8);g.fillStyle="#EBCFCB";g.fill();
+   roundRect(g,120,y+14,Math.max(16,(W-240)*(sc-6)/24),16,8);g.fillStyle=t.color;g.fill();
+  });
+  g.textAlign="center";g.fillStyle="#75666A";g.font=font(500,26);g.fillText("Love Personality Test",W/2,1450);
+  c.toBlob(b=>{
+   if(!b){toast("บันทึกภาพไม่สำเร็จ");return}
+   const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=`love-personality-${r.code}.png`;
+   document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),4000);
+   toast("บันทึกภาพผลลัพธ์แล้ว");
+  },"image/png");
+ };
+ const svgStr=CHARS[r.code]().replace("<svg ",'<svg width="600" height="650" ');
+ const url=URL.createObjectURL(new Blob([svgStr],{type:"image/svg+xml"}));
+ const img=new Image();
+ img.onload=()=>{g.drawImage(img,(W-600)/2,110,600,650);URL.revokeObjectURL(url);finishDraw()};
+ img.onerror=()=>{URL.revokeObjectURL(url);finishDraw()};
+ img.src=url;
+}
+
+const actions={
+ scrollTypes(){
+  const el=document.getElementById("types");if(!el)return;
+  const reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  el.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});
+ },
+ home(){clearTimeout(advanceTimer);state.screen="intro";renderIntro();window.scrollTo({top:0})},
+ start(){
+  if(state.result)return actions.viewResult();
+  if(state.answers.every(a=>a===null))state.idx=0;
+  state.screen="quiz";
+  if(state.idx>=getItems().length)state.idx=0;
+  saveState();renderQuiz(true);window.scrollTo({top:0});
+ },
+ viewResult(){state.screen="result";renderResult()},
+ restart(){resetState();state.screen="quiz";saveState();renderQuiz(true);window.scrollTo({top:0})},
+ answer(btn){
+  const item=getItems()[state.idx];if(!item)return;
+  const v=parseInt(btn.dataset.value,10);if(!(v>=1&&v<=5))return;
+  if(item.type==="q")state.answers[item.i]=v;else state.tie[item.axis]=v;
+  state.tieAxes=computeTieAxes();
+  saveState();renderQuiz(false);
+  const dot=app.querySelector(`.dot[data-value="${v}"]`);if(dot)dot.focus({preventScroll:true});
+  const items=getItems();
+  if(state.idx<items.length-1){clearTimeout(advanceTimer);advanceTimer=setTimeout(()=>{if(state.screen==="quiz")actions.next()},340)}
+ },
+ next(){
+  clearTimeout(advanceTimer);
+  const items=getItems(),item=items[state.idx];
+  if(!item||!isAnswered(item))return;
+  if(state.idx<items.length-1){state.idx++;saveState();renderQuiz("next");window.scrollTo({top:0})}
+  else finish();
+ },
+ back(){
+  clearTimeout(advanceTimer);
+  if(state.idx>0){state.idx--;saveState();renderQuiz("back")}
+ },
+ async copy(){toast(await copyText(summaryText())?"คัดลอกผลลัพธ์แล้ว":"คัดลอกไม่สำเร็จ")},
+ download(){downloadImage()},
+ async share(){
+  const r=state.result,t=TYPES[r.code];
+  const text=`ฉันได้ผล ${r.code} · ${t.en} (${t.th}) จาก Love Personality Test`,url=location.href.split("#")[0];
+  try{if(navigator.share){await navigator.share({title:"Love Personality Test",text,url});return}}catch(e){if(e&&e.name==="AbortError")return}
+  toast(await copyText(`${text}\n${url}`)?"คัดลอกข้อความสำหรับแชร์แล้ว":"แชร์ไม่สำเร็จ");
+ },
+ print(){window.print()}
+};
+document.addEventListener("click",e=>{
+ const b=e.target.closest("[data-action]");
+ if(b&&actions[b.dataset.action])actions[b.dataset.action](b);
+});
+document.addEventListener("keydown",e=>{
+ if(state.screen!=="quiz"||e.metaKey||e.ctrlKey||e.altKey)return;
+ if(/^[1-5]$/.test(e.key)){const d=app.querySelector(`.dot[data-value="${e.key}"]`);if(d)actions.answer(d)}
+});
+
+loadState();
+render();
+</script>
+</body>
+</html>
